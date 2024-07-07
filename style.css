@@ -1,20 +1,67 @@
 body {
-    padding: 0;
-    margin: 0;
-  }
+      
+    /* display: flex;  */
+    justify-content: left;
+    align-items: center;
+    /* width: 800px; */
+    height: 100%;
+    margin: 5px;
+    padding: 10px;
+  } 
 
   .container {
-    height: 100vh;
+    background-color: #f5d776;
+    /* width: 748px; */
     display: grid;
-    gap: 3rem;
-    grid-template-columns: 20% 80%;
-    /* grid-template-rows: 1fr 1fr; */
+    grid-template-columns: 230px auto;
+    /* grid-template-rows: 414px 130px 155px 20px; */
+    gap: 9px;
+  }
+  .list{
+    background-color: #e0b21a;
+    display: grid;
+    grid-template-columns: 200px auto;
+    /* grid-template-rows: 414px 130px 155px 20px; */
+    gap: 9px;
   }
   .left-menu {
     display: grid;
     gap: 2rem;
   }
+  .skills {
+    /* grid-column: 1;
+    grid-row: 2 / span 2; */
+    
+  }
+
+  .main-items {
+    grid-column: 1 / span 2;
+  }
 
   .education {
     color: red;
+  }
+  .company{
+    color: blue;
+  }
+  .dates {
+    text-decoration: underline dotted;
+    font-size: 80%;
+  }
+  .possition{
+    font-size: 80%;
+  }
+  .expierince
+  {
+    background-color:antiquewhite;
+  }
+  .fab {
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin: 5px;
+    text-align: center;
   }
