@@ -1,67 +1,42 @@
-body {
-      
-    /* display: flex;  */
-    justify-content: left;
-    align-items: center;
-    /* width: 800px; */
-    height: 100%;
-    margin: 5px;
+.container-head-flex {
+    display: flex;
+
+}
+
+.container-body{
+    display: grid;
+    grid-template-columns: 320px auto;
+    grid-template-rows: repeat(5, auto); 
     padding: 10px;
-  } 
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
+.div5 { grid-area: 3 / 1 / 4 / 2; }
+.div6 { grid-area: 3 / 2 / 4 / 3; }
+.div7 { grid-area: 4 / 1 / 5 / 2; }
+.div8 { grid-area: 4 / 2 / 5 / 3; }
+.div9 { grid-area: 5 / 1 / 6 / 2; }
+.div10 { grid-area: 5 / 2 / 6 / 3; } 
 
-  .container {
-    background-color: #f5d776;
-    /* width: 748px; */
-    display: grid;
-    grid-template-columns: 230px auto;
-    /* grid-template-rows: 414px 130px 155px 20px; */
-    gap: 9px;
-  }
-  .list{
-    background-color: #e0b21a;
-    display: grid;
-    grid-template-columns: 200px auto;
-    /* grid-template-rows: 414px 130px 155px 20px; */
-    gap: 9px;
-  }
-  .left-menu {
-    display: grid;
-    gap: 2rem;
-  }
-  .skills {
-    /* grid-column: 1;
-    grid-row: 2 / span 2; */
-    
-  }
+.container-body > div {
+    padding: 15px;
+}
+.left
+{
+    text-align: right;
+}
 
-  .main-items {
-    grid-column: 1 / span 2;
-  }
-
-  .education {
-    color: red;
-  }
-  .company{
-    color: blue;
-  }
-  .dates {
-    text-decoration: underline dotted;
-    font-size: 80%;
-  }
-  .possition{
-    font-size: 80%;
-  }
-  .expierince
-  {
-    background-color:antiquewhite;
-  }
-  .fab {
-    border: 1px solid white;
-    border-radius: 50%;
-    font-size: 1.5em;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
-    margin: 5px;
-    text-align: center;
-  }
+.container-body > div > h1 {
+    color: brown;
+    font-size: 130%;
+}
+.container-body > div > h2 {
+    color: brown;
+    font-size: 120%;
+}
+.container-body > div > h3 {
+    color: brown;
+    font-size: 110%;
+}
