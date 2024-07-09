@@ -8,7 +8,7 @@
     <title>Krzysztof Kołsut Resume</title>
 </head>
 <body>
-    <header>
+    <header> 
         <div class="container-head-flex">
             <div style="flex-basis:400px">3</div>
             <div>4</div>
@@ -30,13 +30,15 @@
         <h1>Possittion</h1>
         <h2><a href="https://company.com">company</a></h2>
         <h3>from - to</h3>
-        <h2>Resopnsibilities</h2>
+        <h2 class="callapsable">Resopnsibilities</h2>
+        <div class="responsibilities">
         <ul>
-            <li>ssssss</li>
+            <li>ssssssdfdf</li>
             <li>fffffff</li>
             <li>ssssss</li>
             <li>fffffff</li>
         </ul>
+        </div>
     </div>
     
     <div class="div5 left">
@@ -55,5 +57,22 @@
     </div>
 
     </div>
+
+    <script>
+        var coll = document.getElementsByClassName("callapsable");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
 </body>
 </html>
