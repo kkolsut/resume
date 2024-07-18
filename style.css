@@ -71,3 +71,80 @@
   .exp {
     padding-top: 0 !important;
 }
+
+.name {
+    font-size:x-large;
+}
+
+header { 
+    background-image: url(images/futuristic-white-technology-background/3274764.jpg); 
+    background-size: cover; 
+    background-position: center; 
+    /* height: 300px; Adjust the height as needed  */
+  }
+header ul {
+    list-style-type: none;
+    padding-left: 0px;
+    font-size: small;
+    
+}
+
+header ul li {
+    height: 29px;
+    
+}
+header ul li::before {
+    width: 0px;
+    
+}
+
+header .phone {
+    /* list-style-image: url(images/svg/phone.svg);
+    font-size: 50px; */
+    background-image: url(images/svg/phone.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px;
+    
+}
+header .email {
+    background-image: url(images/svg/email-outline.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+header .linkedin {
+    background-image: url(images/svg/linkedin-original.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+header .github {
+    background-image: url(images/svg/github.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+
+header ul li .content {
+    font-size: medium;
+    vertical-align:bottom;
+    padding: 10px;
+   
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    padding-right: 15px;
+    border-radius: 50%;
+    align-items: center;
+    vertical-align: middle;
+}
