@@ -22,6 +22,7 @@
 
 .container-body > div {
     padding: 15px;
+    /* padding-top: 0; */
 }
 .left
 {
@@ -29,9 +30,12 @@
 }
 
 .container-body > div > h1 {
-    color: brown;
+    color: green;
     font-size: 130%;
+    
 }
+
+
 .container-body > div > h2 {
     color: brown;
     font-size: 120%;
@@ -41,11 +45,11 @@
     font-size: 110%;
 }
 
-collapsable {
+.collapsable {
     background-color: #777;
     color: white;
     cursor: pointer;
-    padding: 18px;
+    padding: 0px;
     width: 100%;
     border: none;
     text-align: left;
@@ -63,3 +67,7 @@ collapsable {
     overflow: hidden;
     background-color: #f1f1f1;
   }
+
+  .exp {
+    padding-top: 0 !important;
+}
