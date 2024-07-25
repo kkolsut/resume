@@ -58,7 +58,7 @@
   }
   
   .active, .collapsable:hover {
-    background-color: #555;
+    background-color: lightgrey;
   }
   
   .responsibilities {
@@ -141,10 +141,18 @@ header ul li .content {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    padding-right: 15px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    padding-right: 0px;
     border-radius: 50%;
     align-items: center;
     vertical-align: middle;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
