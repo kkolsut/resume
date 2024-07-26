@@ -55,10 +55,12 @@
     text-align: left;
     outline: none;
     font-size: 15px;
+    background: url("./images/svg/phone.svg") top left no-repeat;
   }
   
   .active, .collapsable:hover {
-    background-color: lightgrey;
+    background-color: #555;
+    background: url("./images/svg/github.svg") top left no-repeat;
   }
   
   .responsibilities {
@@ -155,5 +157,5 @@ body {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  ali: center;
+  align-items: center;
 }
