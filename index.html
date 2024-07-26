@@ -127,8 +127,11 @@
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
               content.style.display = "none";
+              window.alert(this.text());
+              this.content = "aaa " + this.content;
             } else {
               content.style.display = "block";
+              this.text() = "bbb " + this.text();
             }
           });
         }
