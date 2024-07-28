@@ -6,7 +6,7 @@
 .container-body{
     display: grid;
     grid-template-columns: 180px auto;
-    grid-template-rows: repeat(5, auto); 
+    grid-template-rows: repeat(6, auto); 
     padding: 10px;
 }
 .div1 { grid-area: 1 / 1 / 2 / 2; }
@@ -264,6 +264,22 @@ body {
   border-bottom: none;
 }
 
+.university
+{
+  background: none;
+  color: #9CACDB;
+  font-size: 120%;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+.skill-list ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
 /* .container-body > div > h1 {
   color: #57A0D9;
   font-size: 130%;
@@ -282,3 +298,50 @@ body {
   color: #BAB8D9;
   font-size: 110%;
 } */
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  
+  border-radius: 50%;
+  padding-inline: 30px;
+  padding-top: 20px;
+}
+.contact {
+  padding-top: 40px;
+}
+
+@page {
+  size: A4;
+  margin: 2.5em;
+}
+
+@media print {
+  html,
+  body,
+  body * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    /* page-break-inside: avoid; */
+    /* visibility: hidden; */
+  }
+
+  #page,
+  #page * {
+    page-break-inside: avoid;
+    visibility: visible;
+  }
+
+  #page {
+    /* background-color: white; */
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+  }
+
+
+}
