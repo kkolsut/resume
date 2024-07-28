@@ -30,7 +30,7 @@
     <div class="div1 left">
         Profile: 
     </div>
-    <div class="div2">
+    <div class="div2 section profile">
         I am an experienced Technical Operations Manager with a strong background in test automation and quality assurance. 
         I have a proven track record of leading global teams, developing and implementing testing solutions, and driving continuous improvement in testing processes. 
         I have extensive experience in managing multilingual and functional testing projects, resource management, and providing presales support. 
@@ -40,10 +40,11 @@
     <div class="div3 left">
         Expirience:
     </div>
-    <div class="div4 exp">
-        <h1>Technical Operations Manager</h1>
-        <h2><a href="https://transperfect.com/"><img src="https://logo.clearbit.com/transperfect.com" class="logo">Transperfect</a></h2>
-        <h3>July 2022 – present</h3>
+    <div class="div4 section exp">
+        <div class="exp-section">
+        <h1 class="possition">Technical Operations Manager</h1>
+        <h2 class="company"><a href="https://transperfect.com/"><img src="https://logo.clearbit.com/transperfect.com" class="logo">Transperfect</a></h2>
+        <h3 class="dates">July 2022 – present</h3>
         <h2 class="callapsable">Resopnsibilities</h2>
         <div class="responsibilities">
         <ul>
@@ -60,10 +61,11 @@
         </ul>
         
         </div>
-
-        <h1>Test Manager, Team Lead</h1>
-        <h2><a href="https://transperfect.com/"><img src="https://logo.clearbit.com/transperfect.com" class="logo">Transperfect</a></h2>
-        <h3>November 2016 – June 2022</h3>
+    </div>
+    
+        <h1 class="possition">Test Manager, Team Lead</h1>
+        <h2 class="company"><a href="https://transperfect.com/"><img src="https://logo.clearbit.com/transperfect.com" class="logo">Transperfect</a></h2>
+        <h3 class="dates">November 2016 – June 2022</h3>
         <h2 class="callapsable">Resopnsibilities</h2>
         <div class="responsibilities">
         <ul>
@@ -87,7 +89,7 @@
         
         </div>
         <h1>Possittion</h1>
-        <h2><a href="https://lionbridge.com/"><img src="https://logo.clearbit.com/lionbridge.com" class="logo">Lionbridge</a></h2>
+        <h2 class="company"><a href="https://lionbridge.com/"><img src="https://logo.clearbit.com/lionbridge.com" class="logo">Lionbridge</a></h2>
         <h3>from - to</h3>
         <h2 class="callapsable">Resopnsibilities</h2>
         <div class="responsibilities">
@@ -103,14 +105,18 @@
     <div class="div5 left">
         Education:
     </div>
-    <div class="div6 ">
-        Studies
+    <div class="div6 section">
+        <h3 class="dates">1999 - 2005<h3></h3>
+        <h2><a href="https://www.uw.edu.pl">University of Warsaw</a>, <a href="https://www.fuw.edu.pl">Faculty of Physics</a>, MSc studies in Astronomy</h2>
+        <h3 class="dates">1999 - 2003<h3></h3>
+        <h2><a href="https://www.uw.edu.pl">University of Warsaw</a>, <a href="https://www.fuw.edu.pl">Faculty of Physics</a>, BSc studies in Physics, specializations: Computer methods
+            in physics
     </div>
 
     <div class="div7 left">
         Skills:
     </div>
-    <div class="div8 ">
+    <div class="div8 section">
         <div class="skill-list"></div>
         skills list
     </div>
@@ -127,11 +133,11 @@
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
               content.style.display = "none";
-              window.alert(this.text());
-              this.content = "aaa " + this.content;
+              
+              
             } else {
               content.style.display = "block";
-              this.text() = "bbb " + this.text();
+              
             }
           });
         }
