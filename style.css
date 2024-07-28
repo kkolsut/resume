@@ -3,6 +3,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+ 
 }
 .container-head-flex {
     display: flex;
@@ -21,6 +22,19 @@ body {
     padding: 10px;
 }
 
+@media screen and (max-width: 400px) {
+  .container-body{
+    display: grid;
+    grid-template-columns:  100%;
+    grid-template-rows: repeat(24); 
+    padding: 10px;
+  }
+  .container-head-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 1 / 2 / 2 / 3; }
@@ -65,7 +79,7 @@ body {
   }
   
   .active, .collapsable:hover {
-    background-color: #9e2a2a;
+    /* background-color: #9e2a2a; */
     background: url("./images/svg/triangle-down-svgrepo-com.svg") top left no-repeat;
     padding-left: 30px;
   }
@@ -339,8 +353,9 @@ body {
     color-adjust: exact;
     /* page-break-inside: avoid; */
     /* visibility: hidden; */
+    font-size: 72%;
   }
-
+  
   #page,
   #page * {
     page-break-inside: avoid;
@@ -360,3 +375,6 @@ body {
 
 
 }
+
+
+
