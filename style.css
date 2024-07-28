@@ -260,7 +260,9 @@ body {
   margin-bottom: 5px;
 }
 
-
+.last {
+  border-bottom: none;
+}
 
 /* .container-body > div > h1 {
   color: #57A0D9;
