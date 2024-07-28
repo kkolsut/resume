@@ -1,3 +1,9 @@
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .container-head-flex {
     display: flex;
 
@@ -100,6 +106,8 @@
     overflow: hidden;
     background-color: #D5D9DB;
     margin:15px;
+    border-radius: 10px;
+    
    
   }
 
@@ -220,7 +228,7 @@ body {
     background-color: #E7EDF6;
     border: 2px dashed gray;
     
-    /* border-radius: %2; */
+    border-radius: 10px; 
     margin-bottom: 20px;
 }
 
