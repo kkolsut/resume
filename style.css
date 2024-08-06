@@ -341,19 +341,26 @@ body {
   html,
   body,
   body * {
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    webkit-print-color-adjust: economy;
+    color-adjust: economy;
     /* page-break-inside: avoid; */
     /* visibility: hidden; */
-    font-size: 72%;
+    font-size: 15.5px;
   }
-  
+
   #page,
   #page * {
     page-break-inside: avoid;
     visibility: visible;
   }
+  #print {
+    visibility: hidden;
+  
+  }
 
+  .responsibilities {
+    visibility: visible;
+  }
   #page {
     /* background-color: white; */
     margin: 0;
