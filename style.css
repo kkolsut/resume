@@ -118,7 +118,7 @@ body {
     display: none;
     overflow: hidden;
     background-color: #D5D9DB;
-    margin:15px;
+    margin:15x;
     border-radius: 10px;
     
    
@@ -250,7 +250,8 @@ body {
   margin: px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 28px;
   
 
 
@@ -297,9 +298,9 @@ body {
 }
 
 .skill-list ul {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
 }
 /* .container-body > div > h1 {
   color: #57A0D9;
@@ -341,26 +342,19 @@ body {
   html,
   body,
   body * {
-    webkit-print-color-adjust: economy;
-    color-adjust: economy;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
     /* page-break-inside: avoid; */
     /* visibility: hidden; */
-    font-size: 15.5px;
+    font-size: 92%;
   }
-
+  
   #page,
   #page * {
     page-break-inside: avoid;
     visibility: visible;
   }
-  #print {
-    visibility: hidden;
-  
-  }
 
-  .responsibilities {
-    visibility: visible;
-  }
   #page {
     /* background-color: white; */
     margin: 0;
@@ -372,6 +366,52 @@ body {
 
   }
 
+  header { 
+    background-image:none; 
+    
+  }
+  header .phone {
+    /* list-style-image: url(images/svg/phone.svg);
+    font-size: 50px; */
+    background-image: url(images/svg/phone.svg);
+    /* background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px; */
+    
+}
+header .email {
+    background-image: url(images/svg/email-outline.svg);
+    /* background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px; */
+}
+
+header .linkedin {
+    background-image: url(images/svg/linkedin-original.svg);
+    /* background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px; */
+}
+
+header .github {
+    background-image: url(images/svg/github.svg);
+    /* background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+    padding-left: 20px; */
+}
+#print {
+  display: none;
+}
+.responsibilities {
+  display: block;
+}
+.callapsable {
+  background: url("./images/svg/triangle-down-svgrepo-com.svg") top left no-repeat;
+}
 
 }
 
@@ -424,5 +464,3 @@ body {
 
   }
 }
-
-
