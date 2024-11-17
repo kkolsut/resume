@@ -82,6 +82,7 @@ body {
     /* background-color: #9e2a2a; */
     background: url("./images/svg/triangle-down-svgrepo-com.svg") top left no-repeat;
     padding-left: 30px;
+    
   }
 /* 
   .collapsible {
@@ -355,6 +356,7 @@ body {
     /* visibility: hidden; */
     font-size: 72%;
   }
+  
   
   #page,
   #page * {
