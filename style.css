@@ -142,6 +142,13 @@ body {
   filter: brightness(0) saturate(100%) invert(98%) sepia(15%) saturate(175%) hue-rotate(186deg) brightness(104%) contrast(96%);
 }
 
+.contact-item .contact-icon[src*="linkedin"] {
+  filter: none;
+  background: var(--text-accent);
+  border-radius: 4px;
+  padding: 2px;
+}
+
 .contact-item a {
   color: var(--text-primary);
   text-decoration: none;
