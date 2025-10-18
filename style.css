@@ -60,12 +60,12 @@ body {
   background: linear-gradient(135deg, var(--accent-bg) 0%, var(--secondary-bg) 100%);
   border-bottom: 1px solid var(--border-color);
   position: relative;
-  padding: 2rem;
+  padding: 3rem 2rem 2rem 2rem;
 }
 
 .header-controls {
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   right: 1rem;
   display: flex;
   gap: 0.5rem;
