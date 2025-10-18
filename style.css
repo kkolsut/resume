@@ -15,6 +15,20 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --accent-bg: #e9ecef;
+  --border-color: #dee2e6;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-accent: #0066cc;
+  --text-success: #198754;
+  --text-warning: #fd7e14;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +41,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Container */
@@ -37,6 +52,7 @@ body {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Header */
@@ -47,10 +63,16 @@ body {
   padding: 2rem;
 }
 
-.print-btn {
+.header-controls {
   position: absolute;
   top: 0;
   right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.control-btn, .print-btn {
   background: var(--text-accent);
   color: var(--primary-bg);
   border: none;
@@ -64,10 +86,15 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  z-index: 10;
 }
 
-.print-btn:hover {
+.control-btn {
+  padding: 0.5rem;
+  min-width: 40px;
+  justify-content: center;
+}
+
+.control-btn:hover, .print-btn:hover {
   background: var(--text-success);
   transform: translateY(-1px);
 }
@@ -140,6 +167,10 @@ body {
   height: 24px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(98%) sepia(15%) saturate(175%) hue-rotate(186deg) brightness(104%) contrast(96%);
+}
+
+[data-theme="light"] .contact-item .contact-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(9%) saturate(1094%) hue-rotate(202deg) brightness(95%) contrast(85%);
 }
 
 .contact-item .contact-icon[src*="linkedin"] {

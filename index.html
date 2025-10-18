@@ -19,9 +19,14 @@
 <body>
     <div class="cv-container">
         <header class="cv-header">
-            <button id="print" class="print-btn" onClick="window.print()">
-                <span>🖨️</span> Print CV
-            </button>
+            <div class="header-controls">
+                <button id="theme-toggle" class="control-btn" onclick="toggleTheme()">
+                    <span id="theme-icon">☀️</span>
+                </button>
+                <button id="print" class="print-btn" onClick="window.print()">
+                    <span>🖨️</span> Print CV
+                </button>
+            </div>
 
             <div class="header-content">
                 <div class="profile-section">
@@ -504,8 +509,33 @@
             }
         }
 
-        // Legacy support for collapsible sections
+        // Theme switching functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const currentTheme = body.getAttribute('data-theme');
+
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme on page load
         document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            body.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+
+            // Legacy support for collapsible sections
             var coll = document.getElementsByClassName("callapsable");
             for (let i = 0; i < coll.length; i++) {
                 coll[i].addEventListener("click", function () {
