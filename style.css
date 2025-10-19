@@ -702,8 +702,15 @@ body {
   }
 
   .job-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
     margin-bottom: 0.3rem;
-    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .job-title-company {
+    grid-column: 1;
   }
 
   .job-title {
@@ -725,8 +732,11 @@ body {
   }
 
   .job-duration {
+    grid-column: 2;
     padding: 0.2rem 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    align-self: start;
+    text-align: right;
   }
 
   .job-content {
@@ -759,7 +769,7 @@ body {
   }
 
   .skill-list ul {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.2rem;
   }
 
