@@ -20,11 +20,14 @@
     <div class="cv-container">
         <header class="cv-header">
             <div class="header-controls">
+                <button id="lang-toggle" class="control-btn" onclick="toggleLanguage()">
+                    <span id="lang-label">PL</span>
+                </button>
                 <button id="theme-toggle" class="control-btn" onclick="toggleTheme()">
                     <span id="theme-icon">☀️</span>
                 </button>
                 <button id="print" class="print-btn" onClick="window.print()">
-                    <span>🖨️</span> Print CV
+                    <span>🖨️</span> <span data-i18n="print-btn">Print CV</span>
                 </button>
             </div>
 
@@ -33,8 +36,8 @@
                     <img src="images/picture.jpg" class="profile-image" alt="Krzysztof Kołsut">
                     <div class="name-title">
                         <h1 class="name">Krzysztof Kołsut</h1>
-                        <p class="title">Head of Quality Assurance</p>
-                        <p class="tagline">Technical Operations Leader | Test Automation Expert</p>
+                        <p class="title" data-i18n="header-title">Head of Quality Assurance</p>
+                        <p class="tagline" data-i18n="header-tagline">Technical Operations Leader | Test Automation Expert</p>
                     </div>
                 </div>
 
@@ -63,16 +66,16 @@
             <section class="cv-section">
                 <h2 class="section-header">
                     <span class="section-icon">👤</span>
-                    <span class="section-title">Profile</span>
+                    <span class="section-title" data-i18n="section-profile">Profile</span>
                 </h2>
                 <div class="section-content">
-                    <p class="profile-text">
+                    <p class="profile-text" data-i18n="profile-p1">
                         Experienced Technical Operations Manager specializing in test automation and quality assurance.
                         Proven track record leading global teams, implementing testing solutions, and driving continuous
                         improvement in testing processes. Expert in multilingual and functional testing projects, resource
                         management, and presales support.
                     </p>
-                    <p class="profile-text">
+                    <p class="profile-text" data-i18n="profile-p2">
                         Technical expertise spans multiple programming languages, network configurations, and testing tools.
                         Master's degree in Astronomy with ISTQB® certifications at Foundation and Advanced levels.
                     </p>
@@ -81,13 +84,13 @@
             <section class="cv-section">
                 <h2 class="section-header">
                     <span class="section-icon">💼</span>
-                    <span class="section-title">Experience</span>
+                    <span class="section-title" data-i18n="section-experience">Experience</span>
                 </h2>
                 <div class="section-content">
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Head of Quality Assurance</h3>
+                                <h3 class="job-title" data-i18n="job-title-1">Head of Quality Assurance</h3>
                                 <div class="company-info">
                                     <img src="./images/logos/visuality.jpg" class="company-logo" alt="Visuality">
                                     <a href="https://visuality.pl/" class="company-name" target="_blank">Visuality</a>
@@ -96,26 +99,26 @@
                             <span class="job-duration">Aug 2025 – Present</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
-                        <li>Lead global QA organization including test managers, automation architects, 
+                    <ul data-i18n="job-bullets-1">
+                        <li>Lead global QA organization including test managers, automation architects,
                             and quality engineers while establishing enterprise-wide testing standards</li>
-                        <li>Provide leadership and develop high-performing teams through coaching and 
+                        <li>Provide leadership and develop high-performing teams through coaching and
                             mentoring to exceed quality objectives and business goals</li>
-                        <li>Build and scale QA teams through recruitment, talent assessment, onboarding, 
+                        <li>Build and scale QA teams through recruitment, talent assessment, onboarding,
                             and performance management across all levels</li>
-                        <li>Define and track quality metrics and KPIs to measure product quality and 
+                        <li>Define and track quality metrics and KPIs to measure product quality and
                             team productivity, providing insights to executive leadership</li>
-                        <li>Establish and optimize QA frameworks, testing processes, and automation 
+                        <li>Establish and optimize QA frameworks, testing processes, and automation
                             strategies across all products and platforms</li>
-                        <li>Drive continuous improvement by analyzing quality trends, identifying 
+                        <li>Drive continuous improvement by analyzing quality trends, identifying
                             bottlenecks, and implementing innovative testing solutions</li>
-                        <li>Partner with Engineering, Product, and DevOps to integrate quality practices 
+                        <li>Partner with Engineering, Product, and DevOps to integrate quality practices
                             throughout SDLC and establish release criteria</li>
-                        <li>Collaborate with stakeholders to define quality standards, acceptance criteria, 
+                        <li>Collaborate with stakeholders to define quality standards, acceptance criteria,
                             and risk mitigation strategies aligned with business objectives</li>
-                        <li>Champion test automation initiatives including framework selection, tool evaluation, 
+                        <li>Champion test automation initiatives including framework selection, tool evaluation,
                             and infrastructure development for optimal ROI</li>
                         <li>Ensure compliance with regulatory requirements and industry standards relevant
                              to product quality and testing practices</li>
@@ -126,7 +129,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Technical Operations Manager</h3>
+                                <h3 class="job-title" data-i18n="job-title-2">Technical Operations Manager</h3>
                                 <div class="company-info">
                                     <img src="images/logos/transperfect.png" class="company-logo" alt="Transperfect">
                                     <a href="https://transperfect.com/" class="company-name" target="_blank">Transperfect</a>
@@ -135,9 +138,9 @@
                             <span class="job-duration">Jul 2022 – Jul 2025</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-2">
                         <li>Oversee global team of test automation managers, leads and engineers that includes planning,
                             developing and implementing appropriate testing improvement and automation solutions</li>
                         <li>Provide inspired leadership and motivate team, through training, coaching, and developing,
@@ -152,7 +155,6 @@
                             improvement in both phone and onsite meetings with potential customers</li>
                         <li>Continually develop and expand testing and QA service offerings based on ever-changing
                             industry demands and customer needs</li>
-
                             </ul>
                             </div>
                         </div>
@@ -161,7 +163,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Test Manager, Team Lead</h3>
+                                <h3 class="job-title" data-i18n="job-title-3">Test Manager, Team Lead</h3>
                                 <div class="company-info">
                                     <img src="images/logos/transperfect.png" class="company-logo" alt="Transperfect">
                                     <a href="https://transperfect.com/" class="company-name" target="_blank">Transperfect</a>
@@ -170,16 +172,15 @@
                             <span class="job-duration">Nov 2016 – Jun 2022</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-3">
                         <li>Manage entire life cycle of multilingual and functional testing projects from inception to
                             completion</li>
                         <li>Juggle multiple projects and priorities simultaneously in a fast-paced environment</li>
                         <li>Review and understand project specifications</li>
                         <li>Liaise with Sales team and clients (when necessary) to clarify project parameters and relay
                             project-related information</li>
-                        <!-- <li>Establish and maintain excellent relationships with contract testers</li> -->
                         <li>Coordinate all aspects of project schedule and budget with contract testers</li>
                         <li>Ensure that all testing projects are completed in a timely and cost effective manner and
                             that all client objectives have been met</li>
@@ -192,8 +193,6 @@
                             reviews, coaching & development</li>
                         <li>Support Sales in acquiring new customers</li>
                         <li>Complete all other tasks as assigned by a manager</li>
-
-
                             </ul>
                             </div>
                         </div>
@@ -202,7 +201,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Telco Testing Business Unit Manager</h3>
+                                <h3 class="job-title" data-i18n="job-title-4">Telco Testing Business Unit Manager</h3>
                                 <div class="company-info">
                                     <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
                                     <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
@@ -211,9 +210,9 @@
                             <span class="job-duration">Jul 2015 – Oct 2016</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-4">
                         <li>Supervising the implementation of customer requirements</li>
                         <li>Resource management and allocation</li>
                         <li>Creating and implementing test plans</li>
@@ -223,7 +222,6 @@
                         <li>Team management and performance evaluation</li>
                         <li>Project management of testing according to established guidelines</li>
                         <li>Support sales activities</li>
-
                             </ul>
                             </div>
                         </div>
@@ -232,7 +230,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Senior Project Manager</h3>
+                                <h3 class="job-title" data-i18n="job-title-5">Senior Project Manager</h3>
                                 <div class="company-info">
                                     <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
                                     <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
@@ -241,9 +239,9 @@
                             <span class="job-duration">Sep 2012 – Jun 2015</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-5">
                         <li>Test Leads support during production processes</li>
                         <li>High-level complex project management</li>
                         <li>drafting projects, plans, trainings, and project initiating</li>
@@ -261,7 +259,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Test Lead</h3>
+                                <h3 class="job-title" data-i18n="job-title-6">Test Lead</h3>
                                 <div class="company-info">
                                     <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
                                     <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
@@ -270,15 +268,14 @@
                             <span class="job-duration">Jul 2008 – Aug 2012</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-6">
                         <li>drafting projects, plans, trainings, and project initiating</li>
                         <li>developing materials for testing (guidelines for testers)</li>
                         <li>project scheduling</li>
                         <li>budgeting and invoicing</li>
                         <li>resource management and allocation</li>
-                        <!-- <li>handling small projects individually</li> -->
                         <li>cooperation with customers and reporting</li>
                         <li>compliance with relevant and applicable procedures</li>
                         <li>performing other tasks required for the project flow as requested by Testing Manager</li>
@@ -290,7 +287,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Senior Test Engineer</h3>
+                                <h3 class="job-title" data-i18n="job-title-7">Senior Test Engineer</h3>
                                 <div class="company-info">
                                     <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
                                     <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
@@ -299,9 +296,9 @@
                             <span class="job-duration">Nov 2006 – Jun 2008</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-7">
                         <li>All Test Engineer responsibilities</li>
                         <li>creating/updating and implementing test plans</li>
                         <li>team work time reporting</li>
@@ -310,7 +307,6 @@
                         <li>cooperating with foreign test teams (USA, Ireland, China, Finland, Japan)</li>
                         <li>communicating with client in range indicated by Test Lead</li>
                         <li>resources management</li>
-
                             </ul>
                             </div>
                         </div>
@@ -319,7 +315,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Test Engineer</h3>
+                                <h3 class="job-title" data-i18n="job-title-8">Test Engineer</h3>
                                 <div class="company-info">
                                     <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
                                     <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
@@ -328,19 +324,18 @@
                             <span class="job-duration">Feb 2006 – Oct 2006</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-8">
                         <li>checking the compliance of localized software with given specifications</li>
                         <li>testing localized electronic documentation using given specifications</li>
                         <li>executing the testing plan</li>
                         <li>reporting errors according to project guidelines</li>
                         <li>complying with procedures related to the tasks of a test engineer</li>
                         <li>communicating with Senior Test Engineers responsible for a given project</li>
-                        <li>performing Test Quality Assurance tasks in accordance with the Test Lead’s assignments and
+                        <li>performing Test Quality Assurance tasks in accordance with the Test Lead's assignments and
                             relevant instructions and reporting the results to the Test Lead</li>
                         <li>reporting the time spent on working</li>
-
                             </ul>
                             </div>
                         </div>
@@ -349,7 +344,7 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">Computer Hardware Specialist</h3>
+                                <h3 class="job-title" data-i18n="job-title-9">Computer Hardware Specialist</h3>
                                 <div class="company-info">
                                     <img src="./images/logos/altbit.svg" class="company-logo" alt="Altbit">
                                     <a href="https://altbit.pl/" class="company-name" target="_blank">Altbit</a>
@@ -358,9 +353,9 @@
                             <span class="job-duration">May 2005 – Jan 2006</span>
                         </div>
                         <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
+                            <button class="toggle-btn" onclick="toggleContent(this)" data-i18n="show-details">Show Details</button>
                             <div class="job-content">
-                    <ul>
+                    <ul data-i18n="job-bullets-9">
                         <li>building and repairing computer hardware</li>
                         <li>developing and administrating corporate customers networks</li>
                         <li>supporting corporate customer in general computer problems</li>
@@ -377,16 +372,16 @@
             <section class="cv-section">
                 <h2 class="section-header">
                     <span class="section-icon">🎓</span>
-                    <span class="section-title">Education</span>
+                    <span class="section-title" data-i18n="section-education">Education</span>
                 </h2>
                 <div class="section-content">
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">MSc studies in Astronomy</h3>
+                                <h3 class="job-title" data-i18n="edu-title-1">MSc studies in Astronomy</h3>
                                 <div class="company-info">
-                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank">University of Warsaw</a> -
-                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank">Faculty of Physics</a>
+                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank" data-i18n="university-warsaw">University of Warsaw</a> -
+                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank" data-i18n="faculty-physics">Faculty of Physics</a>
                                 </div>
                             </div>
                             <span class="job-duration">1999 - 2005</span>
@@ -396,16 +391,16 @@
                     <div class="experience-item">
                         <div class="job-header">
                             <div class="job-title-company">
-                                <h3 class="job-title">BSc studies in Physics</h3>
+                                <h3 class="job-title" data-i18n="edu-title-2">BSc studies in Physics</h3>
                                 <div class="company-info">
-                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank">University of Warsaw</a> -
-                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank">Faculty of Physics</a>
+                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank" data-i18n="university-warsaw">University of Warsaw</a> -
+                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank" data-i18n="faculty-physics">Faculty of Physics</a>
                                 </div>
                             </div>
                             <span class="job-duration">1999 - 2003</span>
                         </div>
                         <div class="education-details">
-                            <p>Specializations: Computer methods in physics</p>
+                            <p data-i18n="edu-specialization">Specializations: Computer methods in physics</p>
                         </div>
                     </div>
                 </div>
@@ -414,25 +409,25 @@
             <section class="cv-section">
                 <h2 class="section-header">
                     <span class="section-icon">🏆</span>
-                    <span class="section-title">Certificates</span>
+                    <span class="section-title" data-i18n="section-certificates">Certificates</span>
                 </h2>
                 <div class="section-content">
 
                     <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
+                        <h2 class="university" data-i18n-html="cert-1-title"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
                                 href="https://www.istqb.org/certifications/certified-tester-foundation-level" target="_blank">Foundation
                                 Level</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">08-CTFL-EU-4748-GASQ</a></p>
+                        <p class="credential" data-i18n-html="cert-1-credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">08-CTFL-EU-4748-GASQ</a></p>
                     </div>
                     <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
+                        <h2 class="university" data-i18n-html="cert-2-title"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
                                 href="https://www.istqb.org/certifications/test-manager" target="_blank">Advanced Level - Test Manager</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">5571-1</a></p>
+                        <p class="credential" data-i18n-html="cert-2-credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">5571-1</a></p>
                     </div>
                     <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.scrum.org/" target="_blank">Scrum.org</a> Scrum Master, <a
+                        <h2 class="university" data-i18n-html="cert-3-title"><a href="https://www.scrum.org/" target="_blank">Scrum.org</a> Scrum Master, <a
                                 href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" target="_blank">Professional Scrum Master I</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.scrum.org/user/1513397" target="_blank">1181220</a></p>
+                        <p class="credential" data-i18n-html="cert-3-credential">Credential ID: <a href="https://www.scrum.org/user/1513397" target="_blank">1181220</a></p>
                     </div>
                 </div>
             </section>
@@ -440,12 +435,12 @@
             <section class="cv-section">
                 <h2 class="section-header">
                     <span class="section-icon">⚡</span>
-                    <span class="section-title">Skills</span>
+                    <span class="section-title" data-i18n="section-skills">Skills</span>
                 </h2>
                 <div class="section-content">
 
                     <div class="skill-list">
-                        <h3>Test & Test Automation</h3>
+                        <h3 data-i18n="skill-header-1">Test & Test Automation</h3>
                         <ul>
                             <li>Selenium</li>
                             <li>Appium</li>
@@ -459,7 +454,7 @@
                     </div>
 
                     <div class="skill-list">
-                        <h3>Software Development & Localization</h3>
+                        <h3 data-i18n="skill-header-2">Software Development & Localization</h3>
                         <ul>
                             <li>Java</li>
                             <li>HTML/CSS</li>
@@ -473,23 +468,18 @@
                             <li>SQL</li>
                             <li>SDLC</li>
                             <li>Agile/SCRUM</li>
-                            <li>Internationalization (i18n)</li>
-                            <li>Full Localization Process</li>
+                            <li data-i18n="skill-i18n">Internationalization (i18n)</li>
+                            <li data-i18n="skill-localization">Full Localization Process</li>
                             <li>CAT tools</li>
-                            <li>Localization Testing Expert</li>
-                         
-                    
+                            <li data-i18n="skill-loc-expert">Localization Testing Expert</li>
                         </ul>
                     </div>
 
-
-
-
                     <div class="skill-list">
-                        <h3>Languages</h3>
+                        <h3 data-i18n="skill-header-3">Languages</h3>
                         <ul>
-                            <li>Polish (native)</li>
-                            <li>English (C1)</li>
+                            <li data-i18n="skill-lang-pl">Polish (native)</li>
+                            <li data-i18n="skill-lang-en">English (C1)</li>
                         </ul>
                     </div>
                 </div>
@@ -498,22 +488,177 @@
     </div>
 
 
-
-
-
     <script>
+        const translations = {
+            en: {
+                'print-btn': 'Print CV',
+                'header-title': 'Head of Quality Assurance',
+                'header-tagline': 'Technical Operations Leader | Test Automation Expert',
+                'section-profile': 'Profile',
+                'section-experience': 'Experience',
+                'section-education': 'Education',
+                'section-certificates': 'Certificates',
+                'section-skills': 'Skills',
+                'profile-p1': 'Experienced Technical Operations Manager specializing in test automation and quality assurance. Proven track record leading global teams, implementing testing solutions, and driving continuous improvement in testing processes. Expert in multilingual and functional testing projects, resource management, and presales support.',
+                'profile-p2': "Technical expertise spans multiple programming languages, network configurations, and testing tools. Master's degree in Astronomy with ISTQB® certifications at Foundation and Advanced levels.",
+                'show-details': 'Show Details',
+                'hide-details': 'Hide Details',
+                'job-title-1': 'Head of Quality Assurance',
+                'job-title-2': 'Technical Operations Manager',
+                'job-title-3': 'Test Manager, Team Lead',
+                'job-title-4': 'Telco Testing Business Unit Manager',
+                'job-title-5': 'Senior Project Manager',
+                'job-title-6': 'Test Lead',
+                'job-title-7': 'Senior Test Engineer',
+                'job-title-8': 'Test Engineer',
+                'job-title-9': 'Computer Hardware Specialist',
+                'job-bullets-1': `<li>Lead global QA organization including test managers, automation architects, and quality engineers while establishing enterprise-wide testing standards</li><li>Provide leadership and develop high-performing teams through coaching and mentoring to exceed quality objectives and business goals</li><li>Build and scale QA teams through recruitment, talent assessment, onboarding, and performance management across all levels</li><li>Define and track quality metrics and KPIs to measure product quality and team productivity, providing insights to executive leadership</li><li>Establish and optimize QA frameworks, testing processes, and automation strategies across all products and platforms</li><li>Drive continuous improvement by analyzing quality trends, identifying bottlenecks, and implementing innovative testing solutions</li><li>Partner with Engineering, Product, and DevOps to integrate quality practices throughout SDLC and establish release criteria</li><li>Collaborate with stakeholders to define quality standards, acceptance criteria, and risk mitigation strategies aligned with business objectives</li><li>Champion test automation initiatives including framework selection, tool evaluation, and infrastructure development for optimal ROI</li><li>Ensure compliance with regulatory requirements and industry standards relevant to product quality and testing practices</li>`,
+                'job-bullets-2': `<li>Oversee global team of test automation managers, leads and engineers that includes planning, developing and implementing appropriate testing improvement and automation solutions</li><li>Provide inspired leadership and motivate team, through training, coaching, and developing, to maximize results and meet business objectives</li><li>Recruit, select, train and evaluate employees</li><li>Forecast, track and analyze data to achieve goals, including but not limited to revenue growth, profitability, quality, and retention</li><li>Establish and monitor KPIs to ensure team efficiency</li><li>Create and implement policies, procedures and SOPs</li><li>Continually monitor progress and identify areas for improvement</li><li>Provide presales support as subject-matter expert on automation testing and test process improvement in both phone and onsite meetings with potential customers</li><li>Continually develop and expand testing and QA service offerings based on ever-changing industry demands and customer needs</li>`,
+                'job-bullets-3': `<li>Manage entire life cycle of multilingual and functional testing projects from inception to completion</li><li>Juggle multiple projects and priorities simultaneously in a fast-paced environment</li><li>Review and understand project specifications</li><li>Liaise with Sales team and clients (when necessary) to clarify project parameters and relay project-related information</li><li>Coordinate all aspects of project schedule and budget with contract testers</li><li>Ensure that all testing projects are completed in a timely and cost effective manner and that all client objectives have been met</li><li>Implement, automate and maintain an effective testing process</li><li>Evaluate testing practices on an ongoing basis, identify potential areas for improvement and implement process improvements</li><li>Implement automation whenever possible and needed</li><li>Lead the Testing team to ensure customer satisfaction and meeting business KPIs</li><li>Day to day team management including but not limited to: time and attendance, performance reviews, coaching &amp; development</li><li>Support Sales in acquiring new customers</li><li>Complete all other tasks as assigned by a manager</li>`,
+                'job-bullets-4': `<li>Supervising the implementation of customer requirements</li><li>Resource management and allocation</li><li>Creating and implementing test plans</li><li>Developing procedures</li><li>Decide on recruitment needs and participate in recruitment processes</li><li>Staff training</li><li>Team management and performance evaluation</li><li>Project management of testing according to established guidelines</li><li>Support sales activities</li>`,
+                'job-bullets-5': `<li>Test Leads support during production processes</li><li>High-level complex project management</li><li>drafting projects, plans, trainings, and project initiating</li><li>developing materials for vendors</li><li>project scheduling</li><li>budgeting and invoicing</li><li>resource management and allocation</li><li>cooperation with customers and reporting</li><li>compliance with relevant and applicable procedures</li>`,
+                'job-bullets-6': `<li>drafting projects, plans, trainings, and project initiating</li><li>developing materials for testing (guidelines for testers)</li><li>project scheduling</li><li>budgeting and invoicing</li><li>resource management and allocation</li><li>cooperation with customers and reporting</li><li>compliance with relevant and applicable procedures</li><li>performing other tasks required for the project flow as requested by Testing Manager</li>`,
+                'job-bullets-7': `<li>All Test Engineer responsibilities</li><li>creating/updating and implementing test plans</li><li>team work time reporting</li><li>solving of basic technical problems</li><li>managing Quality Assurance (QA) tests carried by test engineers</li><li>cooperating with foreign test teams (USA, Ireland, China, Finland, Japan)</li><li>communicating with client in range indicated by Test Lead</li><li>resources management</li>`,
+                'job-bullets-8': `<li>checking the compliance of localized software with given specifications</li><li>testing localized electronic documentation using given specifications</li><li>executing the testing plan</li><li>reporting errors according to project guidelines</li><li>complying with procedures related to the tasks of a test engineer</li><li>communicating with Senior Test Engineers responsible for a given project</li><li>performing Test Quality Assurance tasks in accordance with the Test Lead's assignments and relevant instructions and reporting the results to the Test Lead</li><li>reporting the time spent on working</li>`,
+                'job-bullets-9': `<li>building and repairing computer hardware</li><li>developing and administrating corporate customers networks</li><li>supporting corporate customer in general computer problems</li>`,
+                'edu-title-1': 'MSc studies in Astronomy',
+                'edu-title-2': 'BSc studies in Physics',
+                'edu-specialization': 'Specializations: Computer methods in physics',
+                'skill-header-1': 'Test & Test Automation',
+                'skill-header-2': 'Software Development & Localization',
+                'skill-header-3': 'Languages',
+                'skill-i18n': 'Internationalization (i18n)',
+                'skill-localization': 'Full Localization Process',
+                'skill-loc-expert': 'Localization Testing Expert',
+                'skill-lang-pl': 'Polish (native)',
+                'skill-lang-en': 'English (C1)',
+                'university-warsaw': 'University of Warsaw',
+                'faculty-physics': 'Faculty of Physics',
+                'cert-1-title': '<a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a href="https://www.istqb.org/certifications/certified-tester-foundation-level" target="_blank">Foundation Level</a>',
+                'cert-1-credential': 'Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">08-CTFL-EU-4748-GASQ</a>',
+                'cert-2-title': '<a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a href="https://www.istqb.org/certifications/test-manager" target="_blank">Advanced Level - Test Manager</a>',
+                'cert-2-credential': 'Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">5571-1</a>',
+                'cert-3-title': '<a href="https://www.scrum.org/" target="_blank">Scrum.org</a> Scrum Master, <a href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" target="_blank">Professional Scrum Master I</a>',
+                'cert-3-credential': 'Credential ID: <a href="https://www.scrum.org/user/1513397" target="_blank">1181220</a>',
+            },
+            pl: {
+                'print-btn': 'Drukuj CV',
+                'header-title': 'Szef Działu Zapewnienia Jakości',
+                'header-tagline': 'Lider Operacji Technicznych | Ekspert Automatyzacji Testów',
+                'section-profile': 'Profil',
+                'section-experience': 'Doświadczenie',
+                'section-education': 'Wykształcenie',
+                'section-certificates': 'Certyfikaty',
+                'section-skills': 'Umiejętności',
+                'profile-p1': 'Doświadczony Menedżer Operacji Technicznych specjalizujący się w automatyzacji testów i zapewnieniu jakości. Udokumentowane doświadczenie w kierowaniu globalnymi zespołami, wdrażaniu rozwiązań testowych i ciągłym doskonaleniu procesów testowania. Ekspert w projektach testowania wielojęzycznego i funkcjonalnego, zarządzaniu zasobami oraz wsparciu przedsprzedażowym.',
+                'profile-p2': 'Kompetencje techniczne obejmują wiele języków programowania, konfiguracje sieci i narzędzia testowe. Tytuł magistra astronomii z certyfikatami ISTQB® na poziomie podstawowym i zaawansowanym.',
+                'show-details': 'Pokaż szczegóły',
+                'hide-details': 'Ukryj szczegóły',
+                'job-title-1': 'Szef Działu Zapewnienia Jakości',
+                'job-title-2': 'Menedżer Operacji Technicznych',
+                'job-title-3': 'Kierownik Testów, Lider Zespołu',
+                'job-title-4': 'Menedżer Jednostki Biznesowej ds. Testów Telco',
+                'job-title-5': 'Starszy Kierownik Projektu',
+                'job-title-6': 'Lider Testów',
+                'job-title-7': 'Starszy Inżynier Testów',
+                'job-title-8': 'Inżynier Testów',
+                'job-title-9': 'Specjalista ds. Sprzętu Komputerowego',
+                'job-bullets-1': `<li>Kieruję globalną organizacją QA, w skład której wchodzą menedżerowie testów, architekci automatyzacji i inżynierowie jakości, jednocześnie ustanawiając standardy testowania obowiązujące w całym przedsiębiorstwie</li><li>Zapewniam przywództwo i rozwijam wysokowydajne zespoły poprzez coaching i mentoring, aby przekraczać cele jakościowe i biznesowe</li><li>Buduję i skaluję zespoły QA poprzez rekrutację, ocenę talentów, wdrożenie i zarządzanie wydajnością na wszystkich poziomach</li><li>Definiuję i śledzę metryki jakości oraz KPI w celu pomiaru jakości produktu i wydajności zespołu, dostarczając wnioski kierownictwu wyższego szczebla</li><li>Ustanawiam i optymalizuję frameworki QA, procesy testowania i strategie automatyzacji dla wszystkich produktów i platform</li><li>Napędzam ciągłe doskonalenie poprzez analizę trendów jakościowych, identyfikację wąskich gardeł i wdrażanie innowacyjnych rozwiązań testowych</li><li>Współpracuję z działami Inżynierii, Produktu i DevOps w celu integracji praktyk jakościowych w całym cyklu SDLC oraz ustanawiania kryteriów wydania</li><li>Współpracuję z interesariuszami w zakresie definiowania standardów jakości, kryteriów akceptacji i strategii zarządzania ryzykiem, zgodnych z celami biznesowymi</li><li>Promuję inicjatywy automatyzacji testów, obejmujące dobór frameworka, ocenę narzędzi i rozwój infrastruktury dla optymalnego zwrotu z inwestycji</li><li>Zapewniam zgodność z wymaganiami regulacyjnymi i standardami branżowymi dotyczącymi jakości produktu i praktyk testowania</li>`,
+                'job-bullets-2': `<li>Nadzoruję globalny zespół menedżerów automatyzacji testów, liderów i inżynierów, obejmujący planowanie, opracowywanie i wdrażanie odpowiednich rozwiązań doskonalenia testowania i automatyzacji</li><li>Zapewniam inspirujące przywództwo i motywuję zespół poprzez szkolenia, coaching i rozwój, aby maksymalizować wyniki i realizować cele biznesowe</li><li>Rekrutuję, selekcjonuję, szkolę i oceniam pracowników</li><li>Prognozuję, śledzę i analizuję dane w celu osiągania celów, w tym wzrostu przychodów, rentowności, jakości i retencji</li><li>Ustanawiam i monitoruję KPI w celu zapewnienia efektywności zespołu</li><li>Tworzę i wdrażam polityki, procedury i standardowe procedury operacyjne (SOP)</li><li>Stale monitoruję postępy i identyfikuję obszary wymagające poprawy</li><li>Zapewniam wsparcie przedsprzedażowe jako ekspert merytoryczny w zakresie automatyzacji testów i doskonalenia procesów testowych podczas spotkań telefonicznych i osobistych z potencjalnymi klientami</li><li>Stale rozwijam i poszerzam ofertę usług testowania i QA, dostosowując ją do zmieniających się wymagań branży i potrzeb klientów</li>`,
+                'job-bullets-3': `<li>Zarządzam pełnym cyklem życia projektów testowania wielojęzycznego i funkcjonalnego, od etapu inicjacji do zakończenia</li><li>Zarządzam wieloma projektami i priorytetami jednocześnie w dynamicznym środowisku</li><li>Analizuję i rozumiem specyfikacje projektów</li><li>Kontaktuję się z zespołem sprzedaży i klientami (w razie potrzeby) w celu doprecyzowania parametrów projektów i przekazywania informacji</li><li>Koordynuję wszystkie aspekty harmonogramu i budżetu projektu z testerami zewnętrznymi</li><li>Zapewniam terminowe i efektywne kosztowo realizowanie wszystkich projektów testowych oraz osiąganie celów klienta</li><li>Wdrażam, automatyzuję i utrzymuję efektywny proces testowania</li><li>Stale oceniam praktyki testowania, identyfikuję potencjalne obszary do poprawy i wdrażam usprawnienia procesów</li><li>Wdrażam automatyzację wszędzie tam, gdzie jest to możliwe i potrzebne</li><li>Kieruję zespołem testowym w celu zapewnienia satysfakcji klientów i realizacji KPI biznesowych</li><li>Codzienne zarządzanie zespołem obejmujące: ewidencję czasu pracy, oceny wyników, coaching i rozwój</li><li>Wspieram sprzedaż w pozyskiwaniu nowych klientów</li><li>Wykonuję inne zadania zlecone przez menedżera</li>`,
+                'job-bullets-4': `<li>Nadzorowanie realizacji wymagań klientów</li><li>Zarządzanie zasobami i ich alokacja</li><li>Tworzenie i wdrażanie planów testów</li><li>Opracowywanie procedur</li><li>Decydowanie o potrzebach rekrutacyjnych i uczestnictwo w procesach rekrutacji</li><li>Szkolenie personelu</li><li>Zarządzanie zespołem i ocena wyników</li><li>Zarządzanie projektami testowania zgodnie z ustalonymi wytycznymi</li><li>Wspieranie działań sprzedażowych</li>`,
+                'job-bullets-5': `<li>Wsparcie liderów testów podczas procesów produkcyjnych</li><li>Zarządzanie złożonymi projektami na wysokim poziomie</li><li>Opracowywanie projektów, planów, szkoleń i inicjowanie projektów</li><li>Opracowywanie materiałów dla dostawców</li><li>Planowanie harmonogramów projektów</li><li>Budżetowanie i fakturowanie</li><li>Zarządzanie zasobami i ich alokacja</li><li>Współpraca z klientami i raportowanie</li><li>Przestrzeganie odpowiednich i obowiązujących procedur</li>`,
+                'job-bullets-6': `<li>Opracowywanie projektów, planów, szkoleń i inicjowanie projektów</li><li>Opracowywanie materiałów do testowania (wytyczne dla testerów)</li><li>Planowanie harmonogramów projektów</li><li>Budżetowanie i fakturowanie</li><li>Zarządzanie zasobami i ich alokacja</li><li>Współpraca z klientami i raportowanie</li><li>Przestrzeganie odpowiednich i obowiązujących procedur</li><li>Wykonywanie innych zadań wymaganych do prawidłowego przebiegu projektu, zleconych przez menedżera testów</li>`,
+                'job-bullets-7': `<li>Wszystkie obowiązki inżyniera testów</li><li>Tworzenie/aktualizowanie i wdrażanie planów testów</li><li>Raportowanie czasu pracy zespołu</li><li>Rozwiązywanie podstawowych problemów technicznych</li><li>Zarządzanie testami zapewnienia jakości (QA) przeprowadzanymi przez inżynierów testów</li><li>Współpraca z zagranicznymi zespołami testowymi (USA, Irlandia, Chiny, Finlandia, Japonia)</li><li>Komunikacja z klientem w zakresie wskazanym przez lidera testów</li><li>Zarządzanie zasobami</li>`,
+                'job-bullets-8': `<li>Sprawdzanie zgodności zlokalizowanego oprogramowania z podanymi specyfikacjami</li><li>Testowanie zlokalizowanej dokumentacji elektronicznej z wykorzystaniem danych specyfikacji</li><li>Realizacja planu testów</li><li>Raportowanie błędów zgodnie z wytycznymi projektu</li><li>Przestrzeganie procedur związanych z zadaniami inżyniera testów</li><li>Komunikacja ze starszymi inżynierami testów odpowiedzialnymi za dany projekt</li><li>Wykonywanie zadań zapewnienia jakości testów zgodnie z poleceniami lidera testów i odpowiednimi instrukcjami oraz raportowanie wyników do lidera testów</li><li>Raportowanie czasu pracy</li>`,
+                'job-bullets-9': `<li>Budowanie i naprawa sprzętu komputerowego</li><li>Projektowanie i administrowanie sieciami klientów korporacyjnych</li><li>Wsparcie klientów korporacyjnych w ogólnych problemach komputerowych</li>`,
+                'edu-title-1': 'Studia magisterskie z Astronomii',
+                'edu-title-2': 'Studia licencjackie z Fizyki',
+                'edu-specialization': 'Specjalizacje: Metody komputerowe w fizyce',
+                'skill-header-1': 'Testowanie i Automatyzacja Testów',
+                'skill-header-2': 'Rozwój Oprogramowania i Lokalizacja',
+                'skill-header-3': 'Języki',
+                'skill-i18n': 'Internacjonalizacja (i18n)',
+                'skill-localization': 'Pełny Proces Lokalizacji',
+                'skill-loc-expert': 'Ekspert Testowania Lokalizacji',
+                'skill-lang-pl': 'Polski (ojczysty)',
+                'skill-lang-en': 'Angielski (C1)',
+                'university-warsaw': 'Uniwersytet Warszawski',
+                'faculty-physics': 'Wydział Fizyki',
+                'cert-1-title': '<a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certyfikowany Tester, <a href="https://www.istqb.org/certifications/certified-tester-foundation-level" target="_blank">Poziom Podstawowy</a>',
+                'cert-1-credential': 'Numer certyfikatu: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">08-CTFL-EU-4748-GASQ</a>',
+                'cert-2-title': '<a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certyfikowany Tester, <a href="https://www.istqb.org/certifications/test-manager" target="_blank">Poziom Zaawansowany - Kierownik Testów</a>',
+                'cert-2-credential': 'Numer certyfikatu: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">5571-1</a>',
+                'cert-3-title': '<a href="https://www.scrum.org/" target="_blank">Scrum.org</a> Scrum Master, <a href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" target="_blank">Profesjonalny Scrum Master I</a>',
+                'cert-3-credential': 'Numer certyfikatu: <a href="https://www.scrum.org/user/1513397" target="_blank">1181220</a>',
+            }
+        };
+
+        const monthMapPL = {
+            'Jan': 'sty', 'Feb': 'lut', 'Mar': 'mar', 'Apr': 'kwi',
+            'May': 'maj', 'Jun': 'cze', 'Jul': 'lip', 'Aug': 'sie',
+            'Sep': 'wrz', 'Oct': 'paź', 'Nov': 'lis', 'Dec': 'gru'
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                const val = translations[lang]?.[key];
+                if (val === undefined) return;
+                if (el.tagName === 'UL') {
+                    el.innerHTML = val;
+                } else {
+                    el.textContent = val;
+                }
+            });
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.dataset.i18nHtml;
+                const val = translations[lang]?.[key];
+                if (val !== undefined) el.innerHTML = val;
+            });
+            document.querySelectorAll('.job-duration').forEach(el => {
+                if (!el.dataset.dateEn) el.dataset.dateEn = el.textContent.trim();
+                const enDate = el.dataset.dateEn;
+                if (lang === 'pl') {
+                    let plDate = enDate.replace('Present', 'Obecnie');
+                    Object.entries(monthMapPL).forEach(([en, pl]) => {
+                        plDate = plDate.replace(new RegExp('\\b' + en + '\\b', 'g'), pl);
+                    });
+                    el.textContent = plDate;
+                } else {
+                    el.textContent = enDate;
+                }
+            });
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                const isActive = btn.nextElementSibling?.classList.contains('active');
+                btn.textContent = isActive
+                    ? translations[lang]['hide-details']
+                    : translations[lang]['show-details'];
+            });
+            const langLabel = document.getElementById('lang-label');
+            if (langLabel) langLabel.textContent = lang === 'pl' ? 'EN' : 'PL';
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+        }
+
+        function toggleLanguage() {
+            setLanguage(currentLang === 'en' ? 'pl' : 'en');
+        }
+
         function toggleContent(button) {
             const content = button.nextElementSibling;
             if (content.classList.contains('active')) {
                 content.classList.remove('active');
-                button.textContent = 'Show Details';
+                button.textContent = translations[currentLang]['show-details'];
             } else {
                 content.classList.add('active');
-                button.textContent = 'Hide Details';
+                button.textContent = translations[currentLang]['hide-details'];
             }
         }
 
-        // Theme switching functionality
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('theme-icon');
@@ -530,7 +675,6 @@
             }
         }
 
-        // Initialize theme on page load
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             const body = document.body;
@@ -539,22 +683,10 @@
             body.setAttribute('data-theme', savedTheme);
             themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
 
-            // Legacy support for collapsible sections
-            var coll = document.getElementsByClassName("collapsible");
-            for (let i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
-                });
-            }
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
         });
     </script>
-    </div>
 </body>
 
 </html>

@@ -94,6 +94,11 @@ body {
   justify-content: center;
 }
 
+.print-btn {
+  width: 150px;
+  justify-content: center;
+}
+
 .control-btn:hover, .print-btn:hover {
   background: var(--text-success);
   transform: translateY(-1px);
