@@ -4,557 +4,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-
     <title>Krzysztof Kołsut | CV</title>
+    <meta name="description" content="Krzysztof Kołsut — Head of Quality Assurance. Two decades in software testing, test automation and quality leadership.">
+
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        (function () {
+            var pref = 'light';
+            try { pref = localStorage.getItem('theme') || 'light'; } catch (e) {}
+            var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.setAttribute('data-theme', pref);
+            document.documentElement.setAttribute('data-scheme', dark ? 'dark' : 'light');
+        })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <div class="cv-container">
-        <header class="cv-header">
-            <div class="header-controls">
-                <button id="theme-toggle" class="control-btn" onclick="toggleTheme()">
-                    <span id="theme-icon">☀️</span>
-                </button>
-                <button id="print" class="print-btn" onClick="window.print()">
-                    <span>🖨️</span> Print CV
-                </button>
-            </div>
+<body id="top">
+    <section class="hero" aria-labelledby="name">
+        <svg class="orion no-print" aria-hidden="true" viewBox="0 0 400 470">
+            <g class="dust">
+                <circle cx="30" cy="40" r="1.2"></circle><circle cx="160" cy="14" r="1"></circle><circle cx="250" cy="74" r="1.3"></circle><circle cx="384" cy="36" r="1"></circle><circle cx="36" cy="232" r="1.3"></circle><circle cx="64" cy="334" r="1"></circle><circle cx="376" cy="292" r="1.2"></circle><circle cx="252" cy="452" r="1"></circle><circle cx="36" cy="452" r="1.2"></circle><circle cx="366" cy="444" r="1.3"></circle><circle cx="262" cy="204" r="1"></circle><circle cx="138" cy="212" r="1.1"></circle><circle cx="306" cy="320" r="1"></circle><circle cx="116" cy="344" r="1.2"></circle>
+            </g>
+            <g class="lines" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M195 62 L110 128 L168 280 L200 264 L232 250 L282 146 L195 62"></path>
+                <path d="M168 280 L130 410"></path>
+                <path d="M232 250 L300 396"></path>
+                <path d="M110 128 L96 82 L84 40 L112 22"></path>
+                <path d="M282 146 L334 104 L350 134 L354 168 L346 200"></path>
+            </g>
+            <g class="stars">
+                <circle cx="195" cy="62" r="3.2"></circle>
+                <circle cx="282" cy="146" r="5"></circle>
+                <circle cx="232" cy="250" r="4.4"></circle>
+                <circle cx="200" cy="264" r="5"></circle>
+                <circle cx="168" cy="280" r="4.8"></circle>
+                <circle cx="130" cy="410" r="4.4"></circle>
+                <circle cx="196" cy="322" r="1.8"></circle>
+                <circle cx="202" cy="362" r="1.8"></circle>
+                <circle cx="96" cy="82" r="2.2"></circle>
+                <circle cx="84" cy="40" r="2.2"></circle>
+                <circle cx="112" cy="22" r="1.8"></circle>
+                <circle cx="334" cy="104" r="2"></circle>
+                <circle cx="350" cy="134" r="2"></circle>
+                <circle cx="354" cy="168" r="2"></circle>
+                <circle cx="346" cy="200" r="2"></circle>
+            </g>
+            <circle class="nebula" cx="199" cy="342" r="7"></circle>
+            <circle class="core" cx="199" cy="342" r="2.4"></circle>
+            <circle class="betel-glow" cx="110" cy="128" r="15"></circle>
+            <circle class="betel" cx="110" cy="128" r="7.5"></circle>
+            <circle class="rigel-glow" cx="300" cy="396" r="15"></circle>
+            <circle class="rigel" cx="300" cy="396" r="7.5"></circle>
+        </svg>
 
-            <div class="header-content">
-                <div class="profile-section">
-                    <img src="images/picture.jpg" class="profile-image" alt="Krzysztof Kołsut">
-                    <div class="name-title">
-                        <h1 class="name">Krzysztof Kołsut</h1>
-                        <p class="title">Head of Quality Assurance</p>
-                        <p class="tagline">Technical Operations Leader | Test Automation Expert</p>
-                    </div>
+        <header class="topbar wrap no-print">
+            <a class="brand" href="#top">
+                <svg class="brand-mark" aria-hidden="true" width="28" height="16" viewBox="0 0 28 16"><circle cx="4" cy="11" r="2.6"></circle><circle cx="14" cy="8" r="2.8"></circle><circle cx="24" cy="5" r="2.4"></circle></svg>
+                <span>kolsut.net</span>
+            </a>
+            <nav class="topnav" aria-label="Sections">
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#credentials">Certifications</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="topbar-actions">
+                <div class="theme-switch" role="group" aria-label="Colour theme">
+                    <button type="button" data-theme-option="light" aria-pressed="false" aria-label="Light theme" title="Light theme">
+                        <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+                    </button>
+                    <button type="button" data-theme-option="dark" aria-pressed="false" aria-label="Dark theme" title="Dark theme">
+                        <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+                    </button>
+                    <button type="button" data-theme-option="system" aria-pressed="false" aria-label="Match system theme" title="Match system theme">
+                        <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+                    </button>
                 </div>
-
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <img src="images/svg/email.svg" class="contact-icon" alt="Email">
-                        <a href="mailto:krzysztof.kolsut@gmail.com">krzysztof.kolsut@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="images/svg/phone.svg" class="contact-icon" alt="Phone">
-                        <a href="tel:+48502040315">+48 502 040 315</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="images/svg/linkedin-original.svg" class="contact-icon" alt="LinkedIn">
-                        <a href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51/" target="_blank">linkedin.com/in/krzysztof-kolsut-56654b51</a>
-                    </div>
-                    <div class="contact-item">
-                        <img src="images/svg/github.svg" class="contact-icon" alt="GitHub">
-                        <a href="https://github.com/kkolsut" target="_blank">github.com/kkolsut</a>
-                    </div>
-                </div>
+                <button type="button" class="pill-btn" data-print>
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    Print
+                </button>
             </div>
         </header>
 
-        <main class="cv-main">
-            <section class="cv-section">
-                <h2 class="section-header">
-                    <span class="section-icon">👤</span>
-                    <span class="section-title">Profile</span>
-                </h2>
-                <div class="section-content">
-                    <p class="profile-text">
-                        Experienced Technical Operations Manager specializing in test automation and quality assurance.
-                        Proven track record leading global teams, implementing testing solutions, and driving continuous
-                        improvement in testing processes. Expert in multilingual and functional testing projects, resource
-                        management, and presales support.
-                    </p>
-                    <p class="profile-text">
-                        Technical expertise spans multiple programming languages, network configurations, and testing tools.
-                        Master's degree in Astronomy with ISTQB® certifications at Foundation and Advanced levels.
-                    </p>
+        <div class="hero-body wrap">
+            <div class="who">
+                <img class="portrait" src="images/picture.jpg" alt="Krzysztof Kołsut">
+                <div class="who-text">
+                    <span class="role-label">Head of Quality Assurance</span>
+                    <span class="role-sub">at Visuality · Warsaw-trained physicist turned quality leader</span>
                 </div>
-            </section>
-            <section class="cv-section">
-                <h2 class="section-header">
-                    <span class="section-icon">💼</span>
-                    <span class="section-title">Experience</span>
-                </h2>
-                <div class="section-content">
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Head of Quality Assurance</h3>
-                                <div class="company-info">
-                                    <img src="./images/logos/visuality.jpg" class="company-logo" alt="Visuality">
-                                    <a href="https://visuality.pl/" class="company-name" target="_blank">Visuality</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Aug 2025 – Present</span>
+            </div>
+
+            <h1 id="name">Krzysztof Kołsut</h1>
+
+            <p class="lede">Two decades in software testing — from hands-on localization QA to leading global quality and test-automation organisations. I build the teams, frameworks and metrics that make quality measurable.</p>
+
+            <div class="cta-row no-print">
+                <a class="cta primary" href="mailto:krzysztof.kolsut@gmail.com">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    Get in touch
+                </a>
+                <button type="button" class="cta" data-print>
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
+                    Download CV (PDF)
+                </button>
+                <button type="button" class="cta" id="save-contact">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
+                    Save contact
+                </button>
+            </div>
+
+            <ul id="contact" class="contact" aria-label="Contact">
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    <a href="mailto:krzysztof.kolsut@gmail.com">krzysztof.kolsut@gmail.com</a>
+                    <button type="button" class="copy-btn no-print" id="copy-email" aria-label="Copy email address" title="Copy email address">
+                        <svg class="icon when-idle" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <svg class="icon when-copied" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
+                    </button>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+                    <a href="tel:+48502040315">+48 502 040 315</a>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <a href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener" title="linkedin.com/in/krzysztof-kolsut-56654b51">linkedin.com/in/krzysztof-kolsut-56654b51</a>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                    <a href="https://github.com/kkolsut" target="_blank" rel="noopener">github.com/kkolsut</a>
+                </li>
+            </ul>
+
+            <dl class="stats">
+                <div>
+                    <dt>years in testing &amp; QA</dt>
+                    <dd id="stat-years">20+</dd>
+                </div>
+                <div>
+                    <dt>roles across <span id="stat-companies">4</span> companies</dt>
+                    <dd id="stat-roles">9</dd>
+                </div>
+                <div>
+                    <dt>Advanced · Test Manager</dt>
+                    <dd>ISTQB</dd>
+                </div>
+                <div>
+                    <dt>Astronomy, Univ. of Warsaw</dt>
+                    <dd>MSc</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <main class="main wrap">
+        <section id="experience" class="experience" aria-labelledby="exp-h">
+            <div class="section-head">
+                <h2 id="exp-h">Experience</h2>
+                <button type="button" class="ghost-btn no-print" id="toggle-all">Expand all</button>
+            </div>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Visuality</h3>
+                            <a href="https://visuality.pl" target="_blank" rel="noopener">visuality.pl</a>
                         </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>Lead global QA organization including test managers, automation architects, 
-                            and quality engineers while establishing enterprise-wide testing standards</li>
-                        <li>Provide leadership and develop high-performing teams through coaching and 
-                            mentoring to exceed quality objectives and business goals</li>
-                        <li>Build and scale QA teams through recruitment, talent assessment, onboarding, 
-                            and performance management across all levels</li>
-                        <li>Define and track quality metrics and KPIs to measure product quality and 
-                            team productivity, providing insights to executive leadership</li>
-                        <li>Establish and optimize QA frameworks, testing processes, and automation 
-                            strategies across all products and platforms</li>
-                        <li>Drive continuous improvement by analyzing quality trends, identifying 
-                            bottlenecks, and implementing innovative testing solutions</li>
-                        <li>Partner with Engineering, Product, and DevOps to integrate quality practices 
-                            throughout SDLC and establish release criteria</li>
-                        <li>Collaborate with stakeholders to define quality standards, acceptance criteria, 
-                            and risk mitigation strategies aligned with business objectives</li>
-                        <li>Champion test automation initiatives including framework selection, tool evaluation, 
-                            and infrastructure development for optimal ROI</li>
-                        <li>Ensure compliance with regulatory requirements and industry standards relevant
-                             to product quality and testing practices</li>
+                        <span class="meta" data-span>Aug 2025 – Present · 1 yr 3 mo</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role current" data-from="2025-08">
+                            <button type="button" class="role-toggle" aria-expanded="true">
+                                <span class="role-main">
+                                    <span class="role-title-row">
+                                        <span class="role-title">Head of Quality Assurance</span>
+                                        <span class="badge">Current</span>
+                                    </span>
+                                    <span class="meta" data-span>Aug 2025 – Present · 1 yr 3 mo</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets">
+                                <li>Lead a global QA organisation of test managers, automation architects and quality engineers, and set enterprise-wide testing standards.</li>
+                                <li>Coach and mentor teams; recruit, onboard and manage performance at every level.</li>
+                                <li>Define and track quality metrics and KPIs, reporting insights to executive leadership.</li>
+                                <li>Establish QA frameworks, testing processes and automation strategy across all products.</li>
+                                <li>Analyse quality trends, find bottlenecks and drive continuous improvement.</li>
+                                <li>Work with Engineering, Product and DevOps to build quality into the SDLC and set release criteria.</li>
+                                <li>Agree quality standards, acceptance criteria and risk mitigation with stakeholders.</li>
+                                <li>Lead test-automation initiatives: framework selection, tool evaluation and infrastructure.</li>
+                                <li>Ensure compliance with regulatory and industry quality standards.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>TransPerfect</h3>
+                            <a href="https://www.transperfect.com" target="_blank" rel="noopener">transperfect.com</a>
+                        </div>
+                        <span class="meta" data-span>Nov 2016 – Jul 2025 · 8 yrs 9 mo</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2022-07" data-to="2025-07">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Technical Operations Manager</span></span>
+                                    <span class="meta" data-span>Jul 2022 – Jul 2025 · 3 yrs 1 mo</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Led a global team of test-automation managers, leads and engineers through training, coaching and development.</li>
+                                <li>Owned recruitment, selection, training and evaluation of staff.</li>
+                                <li>Forecast and analysed revenue growth, profitability, quality and retention; set and monitored team KPIs.</li>
+                                <li>Wrote policies, procedures and SOPs.</li>
+                                <li>Supported presales as subject-matter expert in phone and on-site customer meetings.</li>
+                                <li>Expanded testing and QA service offerings to meet changing industry demand.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <ol class="roles">
+                    <li class="role" data-from="2016-11" data-to="2022-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Manager, Team Lead</span></span>
+                                <span class="meta" data-span>Nov 2016 – Jun 2022 · 5 yrs 8 mo</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Managed the full lifecycle of multilingual and functional testing projects.</li>
+                            <li>Coordinated schedules and budgets with contract testers for on-time, cost-effective delivery.</li>
+                            <li>Implemented, automated and maintained the testing process; drove process improvements.</li>
+                            <li>Led the team toward customer-satisfaction and business KPIs; ran attendance, reviews, coaching and development.</li>
+                            <li>Supported Sales in winning new customers.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Lionbridge</h3>
+                            <a href="https://www.lionbridge.com" target="_blank" rel="noopener">lionbridge.com</a>
+                        </div>
+                        <span class="meta" data-span>Feb 2006 – Oct 2016 · 10 yrs 9 mo</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2015-07" data-to="2016-10">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Telco Testing Business Unit Manager</span></span>
+                                    <span class="meta" data-span>Jul 2015 – Oct 2016 · 1 yr 4 mo</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Supervised implementation of customer requirements.</li>
+                                <li>Managed resources, recruitment, training and performance evaluation.</li>
+                                <li>Created test plans and procedures; ran testing projects to established guidelines.</li>
+                                <li>Supported sales activities.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <ol class="roles">
+                    <li class="role" data-from="2012-09" data-to="2015-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Senior Project Manager</span></span>
+                                <span class="meta" data-span>Sep 2012 – Jun 2015 · 2 yrs 10 mo</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Managed complex projects end to end: planning, scheduling, budgeting and invoicing.</li>
+                            <li>Supported test leads in production; drafted project plans, training and vendor materials.</li>
+                            <li>Handled resource allocation and customer reporting; ensured procedural compliance.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2008-07" data-to="2012-08">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Lead</span></span>
+                                <span class="meta" data-span>Jul 2008 – Aug 2012 · 4 yrs 2 mo</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Drafted project plans, training and testing guidelines.</li>
+                            <li>Handled scheduling, budgeting, invoicing, resource allocation and customer reporting.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2006-11" data-to="2008-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Senior Test Engineer</span></span>
+                                <span class="meta" data-span>Nov 2006 – Jun 2008 · 1 yr 8 mo</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Created and implemented test plans; managed QA testing by test engineers.</li>
+                            <li>Coordinated with test teams in the USA, Ireland, China, Finland and Japan.</li>
+                            <li>Solved technical problems; managed resources and time reporting.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2006-02" data-to="2006-10">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Engineer</span></span>
+                                <span class="meta" data-span>Feb 2006 – Oct 2006 · 9 mo</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Verified localised software and documentation against specifications.</li>
+                            <li>Executed test plans and reported defects per project guidelines.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Altbit</h3>
+                            <a href="https://altbit.pl" target="_blank" rel="noopener">altbit.pl</a>
+                        </div>
+                        <span class="meta" data-span>May 2005 – Jan 2006 · 9 mo</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2005-05" data-to="2006-01">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Computer Hardware Specialist</span></span>
+                                    <span class="meta" data-span>May 2005 – Jan 2006 · 9 mo</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Built and repaired computer hardware.</li>
+                                <li>Developed and administered corporate customer networks.</li>
+                                <li>Supported corporate customers with general computer problems.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <section id="skills" class="side-section skills" aria-labelledby="skills-h">
+                <h2 id="skills-h">Skills</h2>
+                <div class="skill-group">
+                    <h3>Testing &amp; automation</h3>
+                    <ul class="chips">
+                        <li>Selenium</li><li>Playwright</li><li>Appium</li><li>Postman</li><li>TestNG</li><li>JUnit</li><li>Jira</li><li>Xray</li>
                     </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Technical Operations Manager</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/transperfect.png" class="company-logo" alt="Transperfect">
-                                    <a href="https://transperfect.com/" class="company-name" target="_blank">Transperfect</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Jul 2022 – Jul 2025</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>Oversee global team of test automation managers, leads and engineers that includes planning,
-                            developing and implementing appropriate testing improvement and automation solutions</li>
-                        <li>Provide inspired leadership and motivate team, through training, coaching, and developing,
-                            to maximize results and meet business objectives</li>
-                        <li>Recruit, select, train and evaluate employees</li>
-                        <li>Forecast, track and analyze data to achieve goals, including but not limited to revenue
-                            growth, profitability, quality, and retention</li>
-                        <li>Establish and monitor KPIs to ensure team efficiency</li>
-                        <li>Create and implement policies, procedures and SOPs</li>
-                        <li>Continually monitor progress and identify areas for improvement</li>
-                        <li>Provide presales support as subject-matter expert on automation testing and test process
-                            improvement in both phone and onsite meetings with potential customers</li>
-                        <li>Continually develop and expand testing and QA service offerings based on ever-changing
-                            industry demands and customer needs</li>
-
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Test Manager, Team Lead</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/transperfect.png" class="company-logo" alt="Transperfect">
-                                    <a href="https://transperfect.com/" class="company-name" target="_blank">Transperfect</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Nov 2016 – Jun 2022</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>Manage entire life cycle of multilingual and functional testing projects from inception to
-                            completion</li>
-                        <li>Juggle multiple projects and priorities simultaneously in a fast-paced environment</li>
-                        <li>Review and understand project specifications</li>
-                        <li>Liaise with Sales team and clients (when necessary) to clarify project parameters and relay
-                            project-related information</li>
-                        <!-- <li>Establish and maintain excellent relationships with contract testers</li> -->
-                        <li>Coordinate all aspects of project schedule and budget with contract testers</li>
-                        <li>Ensure that all testing projects are completed in a timely and cost effective manner and
-                            that all client objectives have been met</li>
-                        <li>Implement, automate and maintain an effective testing process</li>
-                        <li>Evaluate testing practices on an ongoing basis, identify potential areas for improvement and
-                            implement process improvements</li>
-                        <li>Implement automation whenever possible and needed</li>
-                        <li>Lead the Testing team to ensure customer satisfaction and meeting business KPIs</li>
-                        <li>Day to day team management including but not limited to: time and attendance, performance
-                            reviews, coaching & development</li>
-                        <li>Support Sales in acquiring new customers</li>
-                        <li>Complete all other tasks as assigned by a manager</li>
-
-
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Telco Testing Business Unit Manager</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
-                                    <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Jul 2015 – Oct 2016</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>Supervising the implementation of customer requirements</li>
-                        <li>Resource management and allocation</li>
-                        <li>Creating and implementing test plans</li>
-                        <li>Developing procedures</li>
-                        <li>Decide on recruitment needs and participate in recruitment processes</li>
-                        <li>Staff training</li>
-                        <li>Team management and performance evaluation</li>
-                        <li>Project management of testing according to established guidelines</li>
-                        <li>Support sales activities</li>
-
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Senior Project Manager</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
-                                    <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Sep 2012 – Jun 2015</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>Test Leads support during production processes</li>
-                        <li>High-level complex project management</li>
-                        <li>drafting projects, plans, trainings, and project initiating</li>
-                        <li>developing materials for vendors</li>
-                        <li>project scheduling</li>
-                        <li>budgeting and invoicing</li>
-                        <li>resource management and allocation</li>
-                        <li>cooperation with customers and reporting</li>
-                        <li>compliance with relevant and applicable procedures</li>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Test Lead</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
-                                    <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Jul 2008 – Aug 2012</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>drafting projects, plans, trainings, and project initiating</li>
-                        <li>developing materials for testing (guidelines for testers)</li>
-                        <li>project scheduling</li>
-                        <li>budgeting and invoicing</li>
-                        <li>resource management and allocation</li>
-                        <!-- <li>handling small projects individually</li> -->
-                        <li>cooperation with customers and reporting</li>
-                        <li>compliance with relevant and applicable procedures</li>
-                        <li>performing other tasks required for the project flow as requested by Testing Manager</li>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Senior Test Engineer</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
-                                    <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Nov 2006 – Jun 2008</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>All Test Engineer responsibilities</li>
-                        <li>creating/updating and implementing test plans</li>
-                        <li>team work time reporting</li>
-                        <li>solving of basic technical problems</li>
-                        <li>managing Quality Assurance (QA) tests carried by test engineers</li>
-                        <li>cooperating with foreign test teams (USA, Ireland, China, Finland, Japan)</li>
-                        <li>communicating with client in range indicated by Test Lead</li>
-                        <li>resources management</li>
-
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Test Engineer</h3>
-                                <div class="company-info">
-                                    <img src="images/logos/lionbridge.png" class="company-logo" alt="Lionbridge">
-                                    <a href="https://lionbridge.com/" class="company-name" target="_blank">Lionbridge</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">Feb 2006 – Oct 2006</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>checking the compliance of localized software with given specifications</li>
-                        <li>testing localized electronic documentation using given specifications</li>
-                        <li>executing the testing plan</li>
-                        <li>reporting errors according to project guidelines</li>
-                        <li>complying with procedures related to the tasks of a test engineer</li>
-                        <li>communicating with Senior Test Engineers responsible for a given project</li>
-                        <li>performing Test Quality Assurance tasks in accordance with the Test Lead’s assignments and
-                            relevant instructions and reporting the results to the Test Lead</li>
-                        <li>reporting the time spent on working</li>
-
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">Computer Hardware Specialist</h3>
-                                <div class="company-info">
-                                    <img src="./images/logos/altbit.svg" class="company-logo" alt="Altbit">
-                                    <a href="https://altbit.pl/" class="company-name" target="_blank">Altbit</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">May 2005 – Jan 2006</span>
-                        </div>
-                        <div class="job-description">
-                            <button class="toggle-btn" onclick="toggleContent(this)">Show Details</button>
-                            <div class="job-content">
-                    <ul>
-                        <li>building and repairing computer hardware</li>
-                        <li>developing and administrating corporate customers networks</li>
-                        <li>supporting corporate customer in general computer problems</li>
-                            </ul>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Development &amp; DevOps</h3>
+                    <ul class="chips">
+                        <li>Java</li><li>Python</li><li>JavaScript</li><li>Ruby</li><li>Bash / Shell</li><li>SQL</li><li>HTML / CSS</li><li>Git / GitHub</li><li>Jenkins</li><li>Docker</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Process &amp; localization</h3>
+                    <ul class="chips">
+                        <li>SDLC</li><li>Agile / Scrum</li><li>Internationalization (i18n)</li><li>Full localization process</li><li>CAT tools</li><li>Localization testing</li>
+                    </ul>
                 </div>
             </section>
 
-
-
-
-            <section class="cv-section">
-                <h2 class="section-header">
-                    <span class="section-icon">🎓</span>
-                    <span class="section-title">Education</span>
-                </h2>
-                <div class="section-content">
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">MSc studies in Astronomy</h3>
-                                <div class="company-info">
-                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank">University of Warsaw</a> -
-                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank">Faculty of Physics</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">1999 - 2005</span>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <div class="job-title-company">
-                                <h3 class="job-title">BSc studies in Physics</h3>
-                                <div class="company-info">
-                                    <a href="https://www.uw.edu.pl" class="company-name" target="_blank">University of Warsaw</a> -
-                                    <a href="https://www.fuw.edu.pl" class="company-name" target="_blank">Faculty of Physics</a>
-                                </div>
-                            </div>
-                            <span class="job-duration">1999 - 2003</span>
-                        </div>
-                        <div class="education-details">
-                            <p>Specializations: Computer methods in physics</p>
-                        </div>
-                    </div>
+            <section id="credentials" class="side-section" aria-labelledby="cert-h">
+                <h2 id="cert-h">Certifications</h2>
+                <div class="entry">
+                    <span class="entry-title">ISTQB Advanced Level — Test Manager</span>
+                    <span class="meta">ID <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank" rel="noopener">5571-1</a></span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">ISTQB Foundation Level</span>
+                    <span class="meta">ID <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank" rel="noopener">08-CTFL-EU-4748-GASQ</a></span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">Professional Scrum Master I</span>
+                    <span class="meta">Scrum.org · ID <a href="https://www.scrum.org/user/1513397" target="_blank" rel="noopener">1181220</a></span>
                 </div>
             </section>
 
-            <section class="cv-section">
-                <h2 class="section-header">
-                    <span class="section-icon">🏆</span>
-                    <span class="section-title">Certificates</span>
-                </h2>
-                <div class="section-content">
-
-                    <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
-                                href="https://www.istqb.org/certifications/certified-tester-foundation-level" target="_blank">Foundation
-                                Level</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">08-CTFL-EU-4748-GASQ</a></p>
-                    </div>
-                    <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.istqb.org/" target="_blank">ISTQB®</a> Certified Tester, <a
-                                href="https://www.istqb.org/certifications/test-manager" target="_blank">Advanced Level - Test Manager</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank">5571-1</a></p>
-                    </div>
-                    <div class="certificate-item">
-                        <h2 class="university"><a href="https://www.scrum.org/" target="_blank">Scrum.org</a> Scrum Master, <a
-                                href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" target="_blank">Professional Scrum Master I</a></h2>
-                        <p class="credential">Credential ID: <a href="https://www.scrum.org/user/1513397" target="_blank">1181220</a></p>
-                    </div>
+            <section id="education" class="side-section" aria-labelledby="edu-h">
+                <h2 id="edu-h">Education</h2>
+                <div class="entry">
+                    <span class="entry-title">MSc, Astronomy</span>
+                    <span class="entry-sub">University of Warsaw, Faculty of Physics</span>
+                    <span class="meta">1999 – 2005</span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">BSc, Physics</span>
+                    <span class="entry-sub">Computer methods in physics · University of Warsaw</span>
+                    <span class="meta">1999 – 2003</span>
                 </div>
             </section>
 
-            <section class="cv-section">
-                <h2 class="section-header">
-                    <span class="section-icon">⚡</span>
-                    <span class="section-title">Skills</span>
-                </h2>
-                <div class="section-content">
-
-                    <div class="skill-list">
-                        <h3>Test & Test Automation</h3>
-                        <ul>
-                            <li>Selenium</li>
-                            <li>Appium</li>
-                            <li>Postman</li>
-                            <li>JIRA</li>
-                            <li>TestNG</li>
-                            <li>JUnit</li>
-                            <li>XRay</li>
-                            <li>Playwright</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-list">
-                        <h3>Software Development & Localization</h3>
-                        <ul>
-                            <li>Java</li>
-                            <li>HTML/CSS</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>Ruby</li>
-                            <li>Bash/Shell</li>
-                            <li>Git/GitHub</li>
-                            <li>Jenkins</li>
-                            <li>Docker</li>
-                            <li>SQL</li>
-                            <li>SDLC</li>
-                            <li>Agile/SCRUM</li>
-                            <li>Internationalization (i18n)</li>
-                            <li>Full Localization Process</li>
-                            <li>CAT tools</li>
-                            <li>Localization Testing Expert</li>
-                         
-                    
-                        </ul>
-                    </div>
-
-
-
-
-                    <div class="skill-list">
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>Polish (native)</li>
-                            <li>English (C1)</li>
-                        </ul>
-                    </div>
-                </div>
+            <section class="side-section languages" aria-labelledby="lang-h">
+                <h2 id="lang-h">Languages</h2>
+                <div class="lang"><span class="entry-title">Polish</span><span class="meta">Native</span></div>
+                <div class="lang"><span class="entry-title">English</span><span class="meta">C1 · Advanced</span></div>
             </section>
-        </main>
-    </div>
+        </aside>
 
+        <div class="print-footer print-only" style="flex: 1 1 100%">
+            <span>Latest version: kolsut.net</span>
+            <span>Printed <span id="printed-on"></span></span>
+        </div>
+    </main>
 
-
-
+    <footer class="site-footer no-print">
+        <div class="wrap">
+            <span class="brand-line">
+                <svg class="brand-mark" aria-hidden="true" width="22" height="12" viewBox="0 0 28 16"><circle cx="4" cy="11" r="2.6"></circle><circle cx="14" cy="8" r="2.8"></circle><circle cx="24" cy="5" r="2.4"></circle></svg>
+                © <span id="year">2026</span> Krzysztof Kołsut
+            </span>
+            <a class="to-top" href="#top">
+                <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
+                Back to top
+            </a>
+        </div>
+    </footer>
 
     <script>
-        function toggleContent(button) {
-            const content = button.nextElementSibling;
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                button.textContent = 'Show Details';
-            } else {
-                content.classList.add('active');
-                button.textContent = 'Hide Details';
-            }
-        }
+        (function () {
+            var root = document.documentElement;
+            var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var now = new Date();
+            var cur = [now.getFullYear(), now.getMonth() + 1];
 
-        // Theme switching functionality
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = body.getAttribute('data-theme');
+            // ---- Theme: light / dark / system ----
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            var themeButtons = document.querySelectorAll('[data-theme-option]');
 
-            if (currentTheme === 'light') {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Initialize theme on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-
-            body.setAttribute('data-theme', savedTheme);
-            themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
-
-            // Legacy support for collapsible sections
-            var coll = document.getElementsByClassName("collapsible");
-            for (let i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                    } else {
-                        content.style.display = "block";
-                    }
+            function applyTheme(pref) {
+                var dark = pref === 'dark' || (pref === 'system' && mq.matches);
+                root.setAttribute('data-theme', pref);
+                root.setAttribute('data-scheme', dark ? 'dark' : 'light');
+                themeButtons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', b.dataset.themeOption === pref ? 'true' : 'false');
                 });
             }
-        });
+
+            themeButtons.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var pref = b.dataset.themeOption;
+                    try { localStorage.setItem('theme', pref); } catch (e) {}
+                    applyTheme(pref);
+                });
+            });
+            mq.addEventListener('change', function () {
+                if (root.getAttribute('data-theme') === 'system') applyTheme('system');
+            });
+            applyTheme(root.getAttribute('data-theme') || 'light');
+
+            // ---- Dates & durations ----
+            function parse(s) {
+                if (!s) return null;
+                var p = s.split('-');
+                return [+p[0], +p[1]];
+            }
+            function months(a, b) { return (b[0] - a[0]) * 12 + (b[1] - a[1]) + 1; }
+            function fmt(d) { return d ? MON[d[1] - 1] + ' ' + d[0] : 'Present'; }
+            function dur(m) {
+                var y = Math.floor(m / 12), r = m % 12;
+                return [y ? y + (y === 1 ? ' yr' : ' yrs') : '', r ? r + ' mo' : ''].filter(Boolean).join(' ');
+            }
+            function spanLabel(from, to) { return fmt(from) + ' – ' + fmt(to) + ' · ' + dur(months(from, to || cur)); }
+
+            var allRoles = document.querySelectorAll('.role');
+            allRoles.forEach(function (role) {
+                var from = parse(role.dataset.from), to = parse(role.dataset.to);
+                role.querySelector('[data-span]').textContent = spanLabel(from, to);
+            });
+            document.querySelectorAll('.company').forEach(function (co) {
+                var roles = co.querySelectorAll('.role');
+                var first = parse(roles[roles.length - 1].dataset.from);
+                var last = parse(roles[0].dataset.to);
+                co.querySelector('.company-head [data-span]').textContent = spanLabel(first, last);
+            });
+
+            document.getElementById('stat-years').textContent = Math.floor(months([2006, 2], cur) / 12) + '+';
+            document.getElementById('stat-roles').textContent = allRoles.length;
+            document.getElementById('stat-companies').textContent = document.querySelectorAll('.company').length;
+            document.getElementById('year').textContent = now.getFullYear();
+            document.getElementById('printed-on').textContent = now.getDate() + ' ' + MON[now.getMonth()] + ' ' + now.getFullYear();
+
+            // ---- Expand / collapse roles ----
+            var toggles = document.querySelectorAll('.role-toggle');
+            var toggleAll = document.getElementById('toggle-all');
+
+            function setOpen(btn, open) {
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.nextElementSibling.hidden = !open;
+            }
+            function allOpen() {
+                return Array.prototype.every.call(toggles, function (b) { return b.getAttribute('aria-expanded') === 'true'; });
+            }
+            function syncToggleAll() {
+                toggleAll.textContent = allOpen() ? 'Collapse all' : 'Expand all';
+            }
+
+            toggles.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    setOpen(btn, btn.getAttribute('aria-expanded') !== 'true');
+                    syncToggleAll();
+                });
+            });
+            toggleAll.addEventListener('click', function () {
+                var open = !allOpen();
+                toggles.forEach(function (b) { setOpen(b, open); });
+                syncToggleAll();
+            });
+            syncToggleAll();
+
+            // ---- Print ----
+            document.querySelectorAll('[data-print]').forEach(function (b) {
+                b.addEventListener('click', function () { window.print(); });
+            });
+
+            // ---- Copy email ----
+            var copyBtn = document.getElementById('copy-email');
+            var copyTimer;
+            copyBtn.addEventListener('click', function () {
+                try { navigator.clipboard.writeText('krzysztof.kolsut@gmail.com'); } catch (e) {}
+                copyBtn.classList.add('copied');
+                copyBtn.title = 'Copied';
+                clearTimeout(copyTimer);
+                copyTimer = setTimeout(function () {
+                    copyBtn.classList.remove('copied');
+                    copyBtn.title = 'Copy email address';
+                }, 1800);
+            });
+
+            // ---- Save contact (vCard) ----
+            document.getElementById('save-contact').addEventListener('click', function () {
+                var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Kołsut;Krzysztof;;;', 'FN:Krzysztof Kołsut', 'TITLE:Head of Quality Assurance', 'ORG:Visuality', 'EMAIL;TYPE=INTERNET:krzysztof.kolsut@gmail.com', 'TEL;TYPE=CELL:+48502040315', 'URL:https://kolsut.net', 'END:VCARD'].join('\r\n');
+                var u = URL.createObjectURL(new Blob([v], { type: 'text/vcard' }));
+                var a = document.createElement('a');
+                a.href = u;
+                a.download = 'krzysztof-kolsut.vcf';
+                a.click();
+                setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
+            });
+        })();
     </script>
-    </div>
 </body>
 
 </html>
