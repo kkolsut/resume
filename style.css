@@ -36,7 +36,7 @@
   /* Orion */
   --star: #1B2230;
   --star-line: rgba(27, 34, 48, 0.2);
-  --star-dust: rgba(27, 34, 48, 0.28);
+  --milky: rgba(43, 75, 168, 0.10);
   --betel: #D9542A;
   --betel-glow: rgba(217, 84, 42, 0.16);
   --rigel: #2F5BD3;
@@ -72,7 +72,7 @@
 
   --star: #F4F1EA;
   --star-line: rgba(244, 241, 234, 0.22);
-  --star-dust: rgba(244, 241, 234, 0.4);
+  --milky: rgba(191, 211, 255, 0.07);
   --betel: #FF8A5C;
   --betel-glow: rgba(255, 138, 92, 0.22);
   --rigel: #BFD3FF;
@@ -152,25 +152,59 @@ button {
   border-bottom: 1px solid var(--hero-line);
 }
 
-.orion {
+.sky {
   position: absolute;
-  right: max(24px, calc((100% - 1160px) / 2 + 24px));
-  top: 27px;
-  width: min(30%, 340px);
-  height: auto;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  overflow: visible;
 }
 
-.orion .dust { fill: var(--star-dust); }
-.orion .lines { stroke: var(--star-line); }
-.orion .stars,
-.orion .core { fill: var(--star); }
-.orion .nebula { fill: var(--nebula); }
-.orion .betel-glow { fill: var(--betel-glow); }
-.orion .betel { fill: var(--betel); }
-.orion .rigel-glow { fill: var(--rigel-glow); }
-.orion .rigel { fill: var(--rigel); }
+/* Wide screens: full strength around Orion, dimmed behind the text column
+   and the stats row. */
+@media (min-width: 1080px) {
+  .sky {
+    -webkit-mask-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.35) 30%, #000 68%),
+      linear-gradient(#000 62%, rgba(0, 0, 0, 0.35) 80%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.35) 30%, #000 68%),
+      linear-gradient(#000 62%, rgba(0, 0, 0, 0.35) 80%);
+    mask-composite: intersect;
+  }
+}
+
+/* Narrower screens: text runs full width, so dim the whole sky. */
+@media (max-width: 1079px) {
+  .sky {
+    opacity: 0.55;
+  }
+}
+
+/* Phones: a fixed-size window on the sky with Orion top right,
+   fading out before the buttons and contact details. */
+@media (max-width: 599px) {
+  .sky {
+    inset: 0 auto auto auto;
+    right: calc(28% - 300px);
+    width: auto;
+    height: 700px;
+    aspect-ratio: 1600 / 1000;
+    -webkit-mask-image: linear-gradient(#000 55%, transparent 90%);
+    mask-image: linear-gradient(#000 55%, transparent 90%);
+  }
+}
+
+.sky .milky { fill: none; stroke: var(--milky); stroke-width: 220; stroke-linecap: round; }
+.sky .lines { fill: none; stroke: var(--star-line); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.sky .lines-main { stroke-width: 1.4; }
+.sky .stars { fill: var(--star); }
+.sky .nebula { fill: var(--nebula); }
+.sky .betel-glow { fill: var(--betel-glow); }
+.sky .betel { fill: var(--betel); }
+.sky .rigel-glow { fill: var(--rigel-glow); }
+.sky .rigel { fill: var(--rigel); }
 
 /* ---------- Header ---------- */
 
@@ -548,6 +582,9 @@ button {
   padding-top: 16px;
   display: flex;
   flex-direction: column-reverse;
+  /* Top-align (flex-end in column-reverse) so numbers line up even when
+     some labels wrap onto two lines. */
+  justify-content: flex-end;
   gap: 4px;
 }
 
