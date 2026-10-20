@@ -5,6 +5,10 @@
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
+  /* Shared height of section headers (incl. underline), so the Experience
+     and sidebar underlines line up despite different font sizes. */
+  --section-head-h: 62px;
+
   /* page */
   --bg: #FAF9F6;
   --surface: #FFFFFF;
@@ -324,8 +328,33 @@ button {
     border-bottom: 1px solid var(--hero-line);
   }
 
-  .topbar-actions {
-    justify-content: space-between;
+  .site-header .topbar-actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .theme-switch {
+    align-self: flex-start;
+  }
+
+  .site-header .more-btn {
+    display: none;
+  }
+
+  .site-header .more-menu {
+    display: block;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .site-header .more-menu button {
+    padding: 12px 4px;
   }
 }
 
@@ -398,20 +427,78 @@ button {
   color: var(--on-hero-accent);
 }
 
-.pill-btn {
-  min-height: 44px;
+.more {
+  position: relative;
+}
+
+.more-btn {
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 18px;
+  justify-content: center;
+  padding: 0;
   border-radius: 999px;
   border: 1px solid var(--hero-line);
   background: transparent;
   color: var(--hero-ink);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
   cursor: pointer;
+}
+
+.more.open .more-btn {
+  border-color: var(--hero-accent);
+  color: var(--hero-accent);
+}
+
+.more-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  min-width: 240px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 12px;
+  border: 1px solid var(--hero-line);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.more.open .more-menu {
+  display: block;
+}
+
+.more-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--hero-ink);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.more-menu .icon {
+  color: var(--hero-muted);
+}
+
+#copy-email .when-copied,
+#copy-email.copied .when-idle {
+  display: none;
+}
+
+#copy-email.copied .when-copied {
+  display: block;
+  color: var(--ok-ink);
 }
 
 .hero-body {
@@ -481,7 +568,8 @@ button {
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 10px 28px;
 }
 
 .cta {
@@ -506,19 +594,45 @@ button {
   color: var(--on-hero-accent);
 }
 
-/* Contacts and stats share one 4-column grid so they line up. */
-.contact,
+.cta-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hero-ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-link .icon {
+  color: var(--hero-muted);
+}
+
+/* Phones: full-width primary action, profile links in one row below. */
+@media (max-width: 599px) {
+  .cta-row {
+    gap: 8px 24px;
+  }
+
+  .cta.primary {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 32px;
 }
 
+/* Print only: on screen the CTA row covers email, phone and profiles. */
 .contact {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
-  row-gap: 8px;
   font-size: 14px;
 }
 
@@ -531,7 +645,7 @@ button {
 }
 
 .contact .icon {
-  color: var(--hero-accent);
+  color: var(--hero-muted);
 }
 
 .contact li {
@@ -542,43 +656,8 @@ button {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--hero-ink);
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-.copy-btn {
-  width: 32px;
-  height: 32px;
-  flex: none;
-  padding: 0;
-  border-radius: 999px;
-  border: 1px solid var(--hero-line);
-  background: transparent;
   color: var(--hero-muted);
-  font-size: 12px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-.copy-btn:hover {
-  color: var(--hero-ink);
-}
-
-.copy-btn .when-copied,
-.copy-btn.copied .when-idle {
-  display: none;
-}
-
-.copy-btn.copied .when-copied {
-  display: block;
-  color: var(--ok-ink);
+  text-decoration: none;
 }
 
 .stats {
@@ -587,14 +666,12 @@ button {
 }
 
 @media (max-width: 1199px) {
-  .contact,
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 599px) {
-  .contact,
   .stats {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -658,6 +735,7 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   gap: 12px 16px;
+  min-height: var(--section-head-h);
   padding-bottom: 16px;
   border-bottom: 2px solid var(--ink);
 }
@@ -852,6 +930,149 @@ button {
   padding-left: 4px;
 }
 
+/* ---------- How I work with AI ---------- */
+
+.ai {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 96px;
+}
+
+.ai-lede {
+  margin: 0;
+  max-width: 64ch;
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.6;
+  color: var(--ink2);
+  text-wrap: pretty;
+}
+
+/* Three steps: me -> agents -> me. The agent step is blue, mine are orange. */
+.ai-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ai-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.ai-flow li:nth-child(2) {
+  border-color: var(--blue-border);
+  background: var(--blue-bg);
+}
+
+/* Arrow in the gap between steps. */
+.ai-flow li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -17px;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid var(--muted);
+  border-right: 2px solid var(--muted);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ai-step {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.ai-flow li:nth-child(2) .ai-step {
+  color: var(--blue);
+}
+
+.ai-flow strong {
+  font-size: 17px;
+}
+
+.ai-flow li > span:last-child {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ai-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ai-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.ai-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.ai-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ai-card p {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink2);
+}
+
+.ai-card a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blue);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ai-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 759px) {
+  .ai-flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .ai-flow li:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 28px;
+    bottom: -15px;
+    transform: rotate(135deg);
+  }
+}
+
 /* ---------- Sidebar ---------- */
 
 .sidebar {
@@ -876,6 +1097,16 @@ button {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.01em;
+}
+
+/* Screen only: print lays headings out as blocks (Firefox ignores
+   break-inside on flex containers). */
+@media screen {
+  .side-section h2 {
+    display: flex;
+    align-items: flex-end;
+    min-height: var(--section-head-h);
+  }
 }
 
 .skills {
@@ -940,6 +1171,12 @@ button {
   color: var(--muted);
 }
 
+.skill-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .languages {
   gap: 12px;
 }
@@ -996,10 +1233,11 @@ button {
 
 /* ---------- Hover feedback ---------- */
 
-.pill-btn,
 .cta,
+.cta-link,
 .ghost-btn,
-.copy-btn,
+.more-btn,
+.more-menu button,
 .menu-btn,
 .theme-switch button,
 .topnav a,
@@ -1010,9 +1248,8 @@ button {
 
 /* Only on devices with real hover, so states don't stick after a tap. */
 @media (hover: hover) {
-  .pill-btn:hover,
   .cta:hover,
-  .copy-btn:hover,
+  .more-btn:hover,
   .menu-btn:hover {
     border-color: var(--hero-accent);
     color: var(--hero-accent);
@@ -1023,6 +1260,15 @@ button {
     border-color: var(--hero-accent-hover);
     background: var(--hero-accent-hover);
     color: var(--on-hero-accent);
+  }
+
+  .cta-link:hover {
+    color: var(--hero-accent);
+  }
+
+  .more-menu button:hover {
+    background: var(--accent-tint);
+    color: var(--hero-accent);
   }
 
   .ghost-btn:hover {
@@ -1155,8 +1401,15 @@ button {
   }
 
   .contact {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 4px;
   }
+
+  .contact a {
+    color: var(--hero-ink);
+  }
+
 
   .stats dd {
     font-size: 22pt;

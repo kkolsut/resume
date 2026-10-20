@@ -43,6 +43,7 @@
                     <a href="#skills">Skills</a>
                     <a href="#credentials">Certifications</a>
                     <a href="#education">Education</a>
+                    <a href="#ai">AI</a>
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="topbar-actions">
@@ -57,10 +58,32 @@
                             <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
                         </button>
                     </div>
-                    <button type="button" class="pill-btn" data-print>
-                        <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                        Print
-                    </button>
+                    <div class="more">
+                        <button type="button" class="more-btn" aria-expanded="false" aria-controls="more-menu" aria-label="More actions" title="More actions">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></svg>
+                        </button>
+                        <ul class="more-menu" id="more-menu">
+                            <li>
+                                <button type="button" data-print>
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                    Print / save as PDF
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="save-contact">
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
+                                    Save contact (vCard)
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="copy-email">
+                                    <svg class="icon when-idle" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <svg class="icon when-copied" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="copy-label">Copy email address</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -210,31 +233,31 @@
 
             <h1 id="name">Krzysztof Kołsut</h1>
 
-            <p class="lede">Two decades in software testing — from hands-on localization QA to leading global quality and test-automation organisations. I build the teams, frameworks and metrics that make quality measurable.</p>
+            <p class="lede">I've spent twenty years in testing, and the best part has always been the people. I love building teams that care about quality as much as I do, and giving them the tools and trust to get there.</p>
 
-            <div class="cta-row no-print">
+            <div id="contact" class="cta-row no-print">
                 <a class="cta primary" href="mailto:krzysztof.kolsut@gmail.com">
                     <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
                     Get in touch
                 </a>
-                <button type="button" class="cta" data-print>
-                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
-                    Download CV (PDF)
-                </button>
-                <button type="button" class="cta" id="save-contact">
-                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
-                    Save contact
-                </button>
+                <a class="cta-link" href="tel:+48502040315" title="+48 502 040 315">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+                    Call
+                </a>
+                <a class="cta-link" href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+                <a class="cta-link" href="https://github.com/kkolsut" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                    GitHub
+                </a>
             </div>
 
-            <ul id="contact" class="contact" aria-label="Contact">
+            <ul class="contact" aria-label="Contact">
                 <li>
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
                     <a href="mailto:krzysztof.kolsut@gmail.com">krzysztof.kolsut@gmail.com</a>
-                    <button type="button" class="copy-btn no-print" id="copy-email" aria-label="Copy email address" title="Copy email address">
-                        <svg class="icon when-idle" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        <svg class="icon when-copied" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
-                    </button>
                 </li>
                 <li>
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
@@ -256,16 +279,16 @@
                     <dd id="stat-years">20+</dd>
                 </div>
                 <div>
-                    <dt>roles across <span id="stat-companies">4</span> companies</dt>
-                    <dd id="stat-roles">9</dd>
+                    <dt>people in the largest team I've led</dt>
+                    <dd>38</dd>
                 </div>
                 <div>
-                    <dt>Advanced · Test Manager</dt>
-                    <dd>ISTQB</dd>
+                    <dt>testing revenue growth at TransPerfect</dt>
+                    <dd>12×</dd>
                 </div>
                 <div>
-                    <dt>Astronomy, Univ. of Warsaw</dt>
-                    <dd>MSc</dd>
+                    <dt>testing time, before any AI tooling</dt>
+                    <dd>−55%</dd>
                 </div>
             </dl>
         </div>
@@ -335,8 +358,9 @@
                                 <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
                             </button>
                             <ul class="bullets" hidden>
-                                <li>Led a global team of test-automation managers, leads and engineers through training, coaching and development.</li>
-                                <li>Owned recruitment, selection, training and evaluation of staff.</li>
+                                <li>Grew the testing business from about $60k to $700k–800k in monthly revenue.</li>
+                                <li>Led a global team of up to 38 test-automation managers, leads and engineers through training, coaching and development.</li>
+                                <li>Hired dozens of people and owned recruitment, selection, training and evaluation.</li>
                                 <li>Forecast and analysed revenue growth, profitability, quality and retention; set and monitored team KPIs.</li>
                                 <li>Wrote policies, procedures and SOPs.</li>
                                 <li>Supported presales as subject-matter expert in phone and on-site customer meetings.</li>
@@ -357,7 +381,9 @@
                         <ul class="bullets" hidden>
                             <li>Managed the full lifecycle of multilingual and functional testing projects.</li>
                             <li>Coordinated schedules and budgets with contract testers for on-time, cost-effective delivery.</li>
-                            <li>Implemented, automated and maintained the testing process; drove process improvements.</li>
+                            <li>Cut testing time by 55% through process changes and automation, before any AI tooling.</li>
+                            <li>Shortened a release test cycle from three months to a single round of about a month.</li>
+                            <li>Reached 100% automation coverage on some projects, with a crawler that detected product changes automatically.</li>
                             <li>Led the team toward customer-satisfaction and business KPIs; ran attendance, reviews, coaching and development.</li>
                             <li>Supported Sales in winning new customers.</li>
                         </ul>
@@ -483,21 +509,21 @@
             <section id="skills" class="side-section skills" aria-labelledby="skills-h">
                 <h2 id="skills-h">Skills</h2>
                 <div class="skill-group">
-                    <h3>Testing &amp; automation</h3>
-                    <ul class="chips">
-                        <li>Selenium</li><li>Playwright</li><li>Appium</li><li>Postman</li><li>TestNG</li><li>JUnit</li><li>Jira</li><li>Xray</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
                     <h3>AI &amp; agentic engineering</h3>
                     <ul class="chips">
                         <li>Claude Code</li><li>OpenAI Codex CLI</li><li>Model Context Protocol (MCP)</li><li>Agent Skills</li><li>Subagents / multi-agent workflows</li><li>GitHub Copilot</li><li>Cursor</li><li>AI-assisted test automation</li>
                     </ul>
                 </div>
                 <div class="skill-group">
-                    <h3>Development &amp; DevOps</h3>
+                    <h3>Testing &amp; automation</h3>
                     <ul class="chips">
-                        <li>Java</li><li>Python</li><li>JavaScript</li><li>Ruby</li><li>Bash / Shell</li><li>SQL</li><li>HTML / CSS</li><li>Git / GitHub</li><li>Jenkins</li><li>Docker</li><li>Ansible</li><li>Podman</li><li>Forgejo / Woodpecker CI</li>
+                        <li>Selenium</li><li>Playwright</li><li>Appium</li><li>Postman</li><li>TestNG</li><li>JUnit</li><li>Jira</li><li>Xray</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>DevOps &amp; CI/CD</h3>
+                    <ul class="chips">
+                        <li>Git / GitHub</li><li>Jenkins</li><li>Docker</li><li>Ansible</li><li>Podman</li><li>Forgejo / Woodpecker CI</li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -512,6 +538,7 @@
                         <li>SDLC</li><li>Agile / Scrum</li><li>Internationalization (i18n)</li><li>Full localization process</li><li>CAT tools</li><li>Localization testing</li>
                     </ul>
                 </div>
+                <p class="skill-note">I also read and write Java, Python, JavaScript, Ruby, Bash, SQL and HTML/CSS.</p>
             </section>
 
             <section id="credentials" class="side-section" aria-labelledby="cert-h">
@@ -556,6 +583,59 @@
             <span>Printed <span id="printed-on"></span></span>
         </div>
     </main>
+
+    <section id="ai" class="ai wrap no-print" aria-labelledby="ai-h">
+        <div class="section-head">
+            <h2 id="ai-h">How I work with AI</h2>
+        </div>
+
+        <p class="ai-lede">I used to need a whole team to try out an idea. Now I plan the work, hand it to a crew of AI agents, and spend my own time on what they can't do: deciding what matters and checking what they build. Same QA instincts, much bigger reach.</p>
+
+        <ol class="ai-flow" aria-label="My AI workflow">
+            <li>
+                <span class="ai-step">01</span>
+                <strong>I set the direction</strong>
+                <span>Goal, plan and guardrails, written down so the agents can follow them.</span>
+            </li>
+            <li>
+                <span class="ai-step">02</span>
+                <strong>Agents do the legwork</strong>
+                <span>Specialised subagents with tools (MCP) and reusable skills, often several in parallel.</span>
+            </li>
+            <li>
+                <span class="ai-step">03</span>
+                <strong>I review and ship</strong>
+                <span>Tests, code review and the final call on quality. That part stays mine.</span>
+            </li>
+        </ol>
+
+        <div class="ai-cards">
+            <article class="ai-card">
+                <span class="ai-tag">Agent design</span>
+                <h3>A team of 11 AI specialists</h3>
+                <p>astro-agents is my Claude Code plugin with eleven subagents for astronomy research, from literature search to paper drafts, with its own referee that checks the results. I distribute it through my own plugin marketplace.</p>
+                <a href="https://github.com/kkolsut/astro-agents" target="_blank" rel="noopener">github.com/kkolsut/astro-agents</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Product, built solo</span>
+                <h3>A public data portal</h3>
+                <p>Polska Lokalna shows official statistics for every Polish municipality: maps, comparisons and a data explorer. I built all of it on my own, from the data pipeline to deployment.</p>
+                <a href="https://polska-lokalna.kolsut.net" target="_blank" rel="noopener">polska-lokalna.kolsut.net</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Infrastructure</span>
+                <h3>My whole homelab, as code</h3>
+                <p>A segmented network and server stack automated with about 20 Ansible roles, plus CI/CD and monitoring with alerts. Built and maintained together with Claude Code.</p>
+                <a href="https://github.com/kkolsut/meetup_presentation" target="_blank" rel="noopener" title="Meetup slides: How I've Over-Engineered My Homelab">github.com/kkolsut/meetup_presentation</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">This page</span>
+                <h3>The CV you're reading</h3>
+                <p>Built with Claude Code, including the star map behind my name: about 120 real stars, projected from catalogue coordinates.</p>
+                <a href="https://github.com/kkolsut/resume" target="_blank" rel="noopener">github.com/kkolsut/resume</a>
+            </article>
+        </div>
+    </section>
 
     <footer class="site-footer no-print">
         <div class="wrap">
@@ -629,8 +709,6 @@
             });
 
             document.getElementById('stat-years').textContent = Math.floor(months([2006, 2], cur) / 12) + '+';
-            document.getElementById('stat-roles').textContent = allRoles.length;
-            document.getElementById('stat-companies').textContent = document.querySelectorAll('.company').length;
             document.getElementById('year').textContent = now.getFullYear();
             document.getElementById('printed-on').textContent = now.getDate() + ' ' + MON[now.getMonth()] + ' ' + now.getFullYear();
 
@@ -689,22 +767,49 @@
                 if (desktop.matches) setMenu(false);
             });
 
+            // ---- More actions menu (desktop dropdown; inline in the mobile menu) ----
+            var more = header.querySelector('.more');
+            var moreBtn = more.querySelector('.more-btn');
+
+            function setMore(open) {
+                more.classList.toggle('open', open);
+                moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            moreBtn.addEventListener('click', function () {
+                setMore(!more.classList.contains('open'));
+            });
+            document.addEventListener('click', function (e) {
+                if (!more.contains(e.target)) setMore(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && more.classList.contains('open')) {
+                    setMore(false);
+                    moreBtn.focus();
+                }
+            });
+
             // ---- Print ----
             document.querySelectorAll('[data-print]').forEach(function (b) {
-                b.addEventListener('click', function () { window.print(); });
+                b.addEventListener('click', function () {
+                    setMore(false);
+                    setMenu(false);
+                    window.print();
+                });
             });
 
             // ---- Copy email ----
             var copyBtn = document.getElementById('copy-email');
+            var copyLabel = copyBtn.querySelector('.copy-label');
             var copyTimer;
             copyBtn.addEventListener('click', function () {
                 try { navigator.clipboard.writeText('krzysztof.kolsut@gmail.com'); } catch (e) {}
                 copyBtn.classList.add('copied');
-                copyBtn.title = 'Copied';
+                copyLabel.textContent = 'Copied!';
                 clearTimeout(copyTimer);
                 copyTimer = setTimeout(function () {
                     copyBtn.classList.remove('copied');
-                    copyBtn.title = 'Copy email address';
+                    copyLabel.textContent = 'Copy email address';
                 }, 1800);
             });
 
