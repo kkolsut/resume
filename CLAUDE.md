@@ -8,7 +8,9 @@ This is a personal resume website for Krzysztof Kołsut built with HTML, CSS, an
 
 ## Architecture and Structure
 
-- **index.html**: Main resume page with personal information, professional profile, skills, experience, and contact details
+- **index.html**: Main resume page (English) with personal information, professional profile, skills, experience, and contact details
+- **pl/index.html**: Polish version of the same page (served at /pl/). It is a hand-maintained translation: any content or markup change in `index.html` must be mirrored here. Job titles, tool and product names stay in English; asset paths are relative (`../style.css`, `../images/`, `../script.js`)
+- **script.js**: Shared page behaviour (theme, dates/durations, expand/collapse, menus, copy, vCard). Language-specific strings live in its `T` table, chosen by `<html lang>`
 - **style.css**: Complete styling using CSS Grid and Flexbox for layout, with print-specific media queries for print optimization
 - **test.html**: Test page with collapsible elements functionality (appears to be for experimentation)
 - **images/**: Directory containing profile picture and background assets

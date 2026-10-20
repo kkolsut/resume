@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krzysztof Kołsut | CV</title>
+    <meta name="description" content="Krzysztof Kołsut, Head of Quality Assurance. Ponad 20 lat w testowaniu oprogramowania, automatyzacji testów i zarządzaniu jakością.">
+
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        // A ?theme= from the language switch wins (file:// pages don't share
+        // localStorage); the default is the system theme.
+        (function () {
+            var pref = 'system';
+            try { pref = localStorage.getItem('theme') || 'system'; } catch (e) {}
+            var fromUrl = new URLSearchParams(location.search).get('theme');
+            if (fromUrl === 'light' || fromUrl === 'dark' || fromUrl === 'system') {
+                pref = fromUrl;
+                try { localStorage.setItem('theme', pref); } catch (e) {}
+            }
+            var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.setAttribute('data-theme', pref);
+            document.documentElement.setAttribute('data-scheme', dark ? 'dark' : 'light');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" hreflang="en" href="https://kolsut.net/">
+    <link rel="alternate" hreflang="pl" href="https://kolsut.net/pl/">
+</head>
+
+<body id="top">
+    <header class="site-header no-print">
+        <div class="topbar wrap">
+            <a class="brand" href="#top">
+                <svg class="brand-mark" aria-hidden="true" width="28" height="16" viewBox="0 0 28 16"><circle cx="4" cy="11" r="2.6"></circle><circle cx="14" cy="8" r="2.8"></circle><circle cx="24" cy="5" r="2.4"></circle></svg>
+                <span>kolsut.net</span>
+            </a>
+            <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-menu" aria-label="Otwórz menu">
+                <svg class="icon when-closed" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="icon when-open" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+            </button>
+            <div class="topbar-menu" id="site-menu">
+                <nav class="topnav" aria-label="Sekcje">
+                    <a href="#experience">Doświadczenie</a>
+                    <a href="#skills">Umiejętności</a>
+                    <a href="#credentials">Certyfikaty</a>
+                    <a href="#education">Wykształcenie</a>
+                    <a href="#ai">AI</a>
+                    <a href="#contact">Kontakt</a>
+                </nav>
+                <div class="topbar-actions">
+                    <nav class="lang-switch" aria-label="Język">
+                        <a href="../index.html" hreflang="en" lang="en" title="English">EN</a>
+                        <a href="index.html" hreflang="pl" lang="pl" aria-current="page" title="Polski">PL</a>
+                    </nav>
+                    <div class="theme-switch" role="group" aria-label="Motyw kolorystyczny">
+                        <button type="button" data-theme-option="light" aria-pressed="false" aria-label="Jasny motyw" title="Jasny motyw">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+                        </button>
+                        <button type="button" data-theme-option="dark" aria-pressed="false" aria-label="Ciemny motyw" title="Ciemny motyw">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+                        </button>
+                        <button type="button" data-theme-option="system" aria-pressed="false" aria-label="Motyw systemowy" title="Motyw systemowy">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+                        </button>
+                    </div>
+                    <div class="more">
+                        <button type="button" class="more-btn" aria-expanded="false" aria-controls="more-menu" aria-label="Więcej opcji" title="Więcej opcji">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></svg>
+                        </button>
+                        <ul class="more-menu" id="more-menu">
+                            <li>
+                                <button type="button" data-print>
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                    Drukuj / zapisz jako PDF
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="save-contact">
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
+                                    Zapisz kontakt (vCard)
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="copy-email">
+                                    <svg class="icon when-idle" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <svg class="icon when-copied" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="copy-label">Skopiuj adres e-mail</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" aria-labelledby="name">
+        <svg class="sky no-print" aria-hidden="true" viewBox="0 0 1600 1000" preserveAspectRatio="xMaxYMid slice">
+        <defs><filter id="sky-blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="40"></feGaussianBlur></filter></defs>
+        <path class="milky" filter="url(#sky-blur)" d="M1537 -461 L1477 -386 L1421 -314 L1369 -243 L1320 -175 L1273 -108 L1229 -42 L1186 22 L1146 86 L1107 149 L1070 212 L1033 274 L998 337 L964 399 L930 463 L897 527 L865 592 L833 658 L802 725 L771 795 L740 866 L709 940 L678 1017 L648 1097 L618 1181 L587 1269 L557 1363"></path>
+        <path class="lines" d="M1209 91 L1408 223 L1429 246 L1441 274 L1410 272 L1384 263 L1172 200 M1441 274 L1511 317 L1637 352 M1637 352 L1646 363 M790 12 L865 48 L950 135 L1019 177 L1046 179 M950 135 L997 210 M865 48 L932 -3 M865 48 L811 81 M743 68 L739 126 M743 68 L821 172 L876 198 L964 265 M821 172 L822 255 L936 314 M790 12 L743 68 M736 421 L782 377 M1017 756 L939 741 L900 748 L872 728 L904 674 L900 748 M939 741 L883 851 L868 891 L820 942 M868 891 L905 927 L1033 935 M939 741 L970 777 L905 927 M1256 682 L1256 729 L1188 751 L1204 794 L1280 818 L1256 729 M1234 686 L1256 729 M1188 751 L1140 709 L1107 700 M1204 794 L1149 819 L1125 796 M1252 615 L1276 571 L1328 577 L1354 546 L1387 548 L1461 611 L1474 599 L1520 699 L1564 680 L1577 646 L1615 642 M978 396 L1010 435 M978 396 L837 493 M1041 588 L992 600 L837 493 L731 645 M837 493 L623 547 M595 354 L498 196 L428 296 M498 196 L512 141 L523 14 M507 406 L502 445 L483 443 L463 402 L470 392 L507 406 M470 392 L434 399 L349 459 L232 521 L296 659 M1735 436 L1742 360 L1799 337 L1869 359 L1840 408 L1811 448 L1735 436 M1811 448 L1827 495"></path>
+        <path class="lines lines-main" d="M1180 361 L1110 396 M1180 361 L1215 411 M1110 396 L1215 411 M1191 496 L1176 517 L1161 527 M1110 396 L1161 527 M1215 411 L1191 496 M1161 527 L1136 636 M1191 496 L1252 615 M1110 396 L1085 364 L1053 299 L1083 214 L1115 213 M1053 299 L1068 291 M1215 411 L1339 401 M1327 298 L1314 309 L1320 356 L1336 374 L1339 401 L1334 421 L1324 465 L1309 476"></path>
+        <circle class="nebula" cx="1180" cy="575" r="9"></circle>
+        <circle class="rigel-glow" cx="1546" cy="139" r="18"></circle>
+        <g class="stars">
+            <circle cx="1840" cy="408" r="1.1"></circle>
+            <circle cx="1327" cy="298" r="1.1"></circle>
+            <circle cx="1742" cy="360" r="1.1"></circle>
+            <circle cx="512" cy="141" r="1.1"></circle>
+            <circle cx="1320" cy="356" r="1.1"></circle>
+            <circle cx="1179" cy="568" r="1.1"></circle>
+            <circle cx="1083" cy="214" r="1.1"></circle>
+            <circle cx="978" cy="396" r="1.1"></circle>
+            <circle cx="1309" cy="476" r="1.1"></circle>
+            <circle cx="1053" cy="299" r="1.1"></circle>
+            <circle cx="502" cy="445" r="1.1"></circle>
+            <circle cx="1461" cy="611" r="1.1"></circle>
+            <circle cx="1068" cy="291" r="1.1"></circle>
+            <circle cx="1181" cy="367" r="1.1"></circle>
+            <circle cx="1115" cy="213" r="1.1"></circle>
+            <circle cx="865" cy="48" r="1.1"></circle>
+            <circle cx="900" cy="748" r="1.1"></circle>
+            <circle cx="1328" cy="577" r="1.1"></circle>
+            <circle cx="1564" cy="680" r="1.1"></circle>
+            <circle cx="1010" cy="435" r="1.1"></circle>
+            <circle cx="1256" cy="682" r="1.1"></circle>
+            <circle cx="1336" cy="374" r="1.1"></circle>
+            <circle cx="463" cy="402" r="1.1"></circle>
+            <circle cx="1553" cy="132" r="1.1"></circle>
+            <circle cx="1234" cy="686" r="1.1"></circle>
+            <circle cx="623" cy="547" r="1.1"></circle>
+            <circle cx="483" cy="443" r="1.1"></circle>
+            <circle cx="1869" cy="359" r="1.1"></circle>
+            <circle cx="1799" cy="337" r="1.1"></circle>
+            <circle cx="428" cy="296" r="1.1"></circle>
+            <circle cx="1550" cy="141" r="1.1"></circle>
+            <circle cx="507" cy="406" r="1.1"></circle>
+            <circle cx="997" cy="210" r="1.1"></circle>
+            <circle cx="837" cy="493" r="1.1"></circle>
+            <circle cx="1085" cy="364" r="1.1"></circle>
+            <circle cx="872" cy="728" r="1.1"></circle>
+            <circle cx="1174" cy="370" r="1.1"></circle>
+            <circle cx="1314" cy="309" r="1.1"></circle>
+            <circle cx="904" cy="674" r="1.1"></circle>
+            <circle cx="1827" cy="495" r="1.1"></circle>
+            <circle cx="1180" cy="575" r="1.1"></circle>
+            <circle cx="1354" cy="546" r="1.1"></circle>
+            <circle cx="1474" cy="599" r="1.1"></circle>
+            <circle cx="523" cy="14" r="1.1"></circle>
+            <circle cx="1041" cy="588" r="1.1"></circle>
+            <circle cx="970" cy="777" r="1.1"></circle>
+            <circle cx="498" cy="196" r="1.1"></circle>
+            <circle cx="876" cy="198" r="1.1"></circle>
+            <circle cx="1387" cy="548" r="1.1"></circle>
+            <circle cx="731" cy="645" r="1.1"></circle>
+            <circle cx="232" cy="521" r="1.1"></circle>
+            <circle cx="349" cy="459" r="1.1"></circle>
+            <circle cx="1551" cy="134" r="1.1"></circle>
+            <circle cx="1168" cy="536" r="1.2"></circle>
+            <circle cx="811" cy="81" r="1.2"></circle>
+            <circle cx="1125" cy="796" r="1.2"></circle>
+            <circle cx="1429" cy="246" r="1.2"></circle>
+            <circle cx="992" cy="600" r="1.2"></circle>
+            <circle cx="1615" cy="642" r="1.2"></circle>
+            <circle cx="1324" cy="465" r="1.2"></circle>
+            <circle cx="1637" cy="352" r="1.3"></circle>
+            <circle cx="1555" cy="138" r="1.3"></circle>
+            <circle cx="1107" cy="700" r="1.3"></circle>
+            <circle cx="1334" cy="421" r="1.3"></circle>
+            <circle cx="1441" cy="274" r="1.3"></circle>
+            <circle cx="1241" cy="596" r="1.3"></circle>
+            <circle cx="1646" cy="363" r="1.3"></circle>
+            <circle cx="1540" cy="140" r="1.3"></circle>
+            <circle cx="932" cy="-3" r="1.3"></circle>
+            <circle cx="822" cy="255" r="1.3"></circle>
+            <circle cx="1149" cy="819" r="1.3"></circle>
+            <circle cx="739" cy="126" r="1.4"></circle>
+            <circle cx="1140" cy="709" r="1.4"></circle>
+            <circle cx="1408" cy="223" r="1.4"></circle>
+            <circle cx="821" cy="172" r="1.4"></circle>
+            <circle cx="595" cy="354" r="1.4"></circle>
+            <circle cx="1577" cy="646" r="1.4"></circle>
+            <circle cx="1811" cy="448" r="1.5"></circle>
+            <circle cx="1410" cy="272" r="1.5"></circle>
+            <circle cx="1511" cy="317" r="1.5"></circle>
+            <circle cx="470" cy="392" r="1.5"></circle>
+            <circle cx="1180" cy="361" r="1.5"></circle>
+            <circle cx="1217" cy="534" r="1.5"></circle>
+            <circle cx="936" cy="314" r="1.5"></circle>
+            <circle cx="1046" cy="179" r="1.6"></circle>
+            <circle cx="1256" cy="729" r="1.6"></circle>
+            <circle cx="1339" cy="401" r="1.7"></circle>
+            <circle cx="1280" cy="818" r="1.7"></circle>
+            <circle cx="434" cy="399" r="1.8"></circle>
+            <circle cx="1172" cy="200" r="1.9"></circle>
+            <circle cx="883" cy="851" r="1.9"></circle>
+            <circle cx="1033" cy="935" r="1.9"></circle>
+            <circle cx="950" cy="135" r="1.9"></circle>
+            <circle cx="1520" cy="699" r="1.9"></circle>
+            <circle cx="782" cy="377" r="1.9"></circle>
+            <circle cx="1019" cy="177" r="2.0"></circle>
+            <circle cx="1546" cy="139" r="2.0"></circle>
+            <circle cx="1204" cy="794" r="2.0"></circle>
+            <circle cx="1276" cy="571" r="2.0"></circle>
+            <circle cx="1179" cy="583" r="2.0"></circle>
+            <circle cx="1188" cy="751" r="2.2"></circle>
+            <circle cx="1735" cy="436" r="2.2"></circle>
+            <circle cx="820" cy="942" r="2.3"></circle>
+            <circle cx="1191" cy="496" r="2.5"></circle>
+            <circle cx="1136" cy="636" r="2.6"></circle>
+            <circle cx="1017" cy="756" r="2.7"></circle>
+            <circle cx="964" cy="265" r="2.8"></circle>
+            <circle cx="868" cy="891" r="2.8"></circle>
+            <circle cx="1161" cy="527" r="2.9"></circle>
+            <circle cx="1176" cy="517" r="3.0"></circle>
+            <circle cx="1209" cy="91" r="3.0"></circle>
+            <circle cx="1215" cy="411" r="3.0"></circle>
+            <circle cx="790" cy="12" r="3.1"></circle>
+            <circle cx="905" cy="927" r="3.1"></circle>
+            <circle cx="743" cy="68" r="3.4"></circle>
+            <circle cx="736" cy="421" r="4.1"></circle>
+        </g>
+        <circle class="betel-glow" cx="296" cy="659" r="7.0"></circle><circle class="betel" cx="296" cy="659" r="2.7"></circle>
+        <circle class="betel-glow" cx="1384" cy="263" r="9.5"></circle><circle class="betel" cx="1384" cy="263" r="3.7"></circle>
+        <circle class="betel-glow" cx="1110" cy="396" r="10.3"></circle><circle class="betel" cx="1110" cy="396" r="4.0"></circle>
+        <circle class="rigel-glow" cx="1252" cy="615" r="11.2"></circle><circle class="rigel" cx="1252" cy="615" r="4.3"></circle>
+        <circle class="rigel-glow" cx="939" cy="741" r="14.7"></circle><circle class="rigel" cx="939" cy="741" r="5.6"></circle>
+        </svg>
+
+        <div class="hero-body wrap">
+            <div class="who">
+                <img class="portrait" src="../images/picture.jpg" alt="Krzysztof Kołsut">
+                <div class="who-text">
+                    <span class="role-label">Head of Quality Assurance</span>
+                    <span class="role-sub">w Visuality · z wykształcenia fizyk (UW), z zawodu lider jakości</span>
+                </div>
+            </div>
+
+            <h1 id="name">Krzysztof Kołsut</h1>
+
+            <p class="lede">Od dwudziestu lat pracuję w testowaniu, a najlepszą częścią tej pracy zawsze byli ludzie. Uwielbiam budować zespoły, którym zależy na jakości tak samo jak mnie, i dawać im narzędzia oraz zaufanie, żeby mogły to osiągnąć.</p>
+
+            <div id="contact" class="cta-row no-print">
+                <a class="cta primary" href="mailto:krzysztof.kolsut@gmail.com">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    Napisz do mnie
+                </a>
+                <a class="cta-link" href="tel:+48502040315" title="+48 502 040 315">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+                    Zadzwoń
+                </a>
+                <a class="cta-link" href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+                <a class="cta-link" href="https://github.com/kkolsut" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                    GitHub
+                </a>
+            </div>
+
+            <ul class="contact" aria-label="Kontakt">
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+                    <a href="mailto:krzysztof.kolsut@gmail.com">krzysztof.kolsut@gmail.com</a>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+                    <a href="tel:+48502040315">+48 502 040 315</a>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <a href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener" title="linkedin.com/in/krzysztof-kolsut-56654b51">linkedin.com/in/krzysztof-kolsut-56654b51</a>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                    <a href="https://github.com/kkolsut" target="_blank" rel="noopener">github.com/kkolsut</a>
+                </li>
+            </ul>
+
+            <dl class="stats">
+                <div>
+                    <dt>lat w testowaniu i QA</dt>
+                    <dd id="stat-years">20+</dd>
+                </div>
+                <div>
+                    <dt>osób w największym zespole, którym kierowałem</dt>
+                    <dd>38</dd>
+                </div>
+                <div>
+                    <dt>wzrost przychodów z testów w TransPerfect</dt>
+                    <dd>12×</dd>
+                </div>
+                <div>
+                    <dt>czasu testowania, jeszcze bez AI</dt>
+                    <dd>−55%</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <main class="main wrap">
+        <section id="experience" class="experience" aria-labelledby="exp-h">
+            <div class="section-head">
+                <h2 id="exp-h">Doświadczenie</h2>
+                <button type="button" class="ghost-btn no-print" id="toggle-all">Rozwiń wszystko</button>
+            </div>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Visuality</h3>
+                            <a href="https://visuality.pl" target="_blank" rel="noopener">visuality.pl</a>
+                        </div>
+                        <span class="meta" data-span>sie 2025 – obecnie · 1 rok 3 mies.</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role current" data-from="2025-08">
+                            <button type="button" class="role-toggle" aria-expanded="true">
+                                <span class="role-main">
+                                    <span class="role-title-row">
+                                        <span class="role-title">Head of Quality Assurance</span>
+                                        <span class="badge">Obecnie</span>
+                                    </span>
+                                    <span class="meta" data-span>sie 2025 – obecnie · 1 rok 3 mies.</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets">
+                                <li>Coachuję i mentoruję zespoły; rekrutuję, wdrażam nowe osoby i zarządzam efektywnością na każdym poziomie.</li>
+                                <li>Definiuję i monitoruję metryki jakości i KPI, a wnioski raportuję do zarządu.</li>
+                                <li>Tworzę frameworki QA, procesy testowe i strategię automatyzacji dla wszystkich produktów.</li>
+                                <li>Analizuję trendy jakości, znajduję wąskie gardła i prowadzę ciągłe doskonalenie.</li>
+                                <li>Współpracuję z zespołami Engineering, Product i DevOps, żeby wbudować jakość w SDLC i ustalać kryteria wydań.</li>
+                                <li>Uzgadniam z interesariuszami standardy jakości, kryteria akceptacji i sposoby ograniczania ryzyka.</li>
+                                <li>Prowadzę inicjatywy automatyzacji testów: wybór frameworków, ocenę narzędzi i infrastrukturę.</li>
+                                <li>Wprowadzam do QA pracę wspieraną przez AI: agentowe narzędzia do kodowania (Claude Code, Codex), integracje MCP i skille agentów wielokrotnego użytku, które przyspieszają projektowanie testów, automatyzację i analizę.</li>
+                                <li>Dbam o zgodność z regulacjami i branżowymi standardami jakości.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>TransPerfect</h3>
+                            <a href="https://www.transperfect.com" target="_blank" rel="noopener">transperfect.com</a>
+                        </div>
+                        <span class="meta" data-span>lis 2016 – lip 2025 · 8 lat 9 mies.</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2022-07" data-to="2025-07">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Technical Operations Manager</span></span>
+                                    <span class="meta" data-span>lip 2022 – lip 2025 · 3 lata 1 mies.</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Rozwinąłem biznes testowy z ok. 60 tys. do 700–800 tys. USD miesięcznego przychodu.</li>
+                                <li>Zatrudniłem kilkadziesiąt osób; odpowiadałem za rekrutację, selekcję, szkolenia i ocenę pracowników.</li>
+                                <li>Prognozowałem i analizowałem wzrost przychodów, rentowność, jakość i retencję; ustalałem i monitorowałem KPI zespołu.</li>
+                                <li>Pisałem polityki, procedury i SOP-y.</li>
+                                <li>Wspierałem presales jako ekspert merytoryczny na spotkaniach z klientami, telefonicznie i na miejscu.</li>
+                                <li>Rozszerzałem ofertę usług testowych i QA zgodnie ze zmieniającymi się potrzebami rynku.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <ol class="roles">
+                    <li class="role" data-from="2016-11" data-to="2022-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Manager, Team Lead</span></span>
+                                <span class="meta" data-span>lis 2016 – cze 2022 · 5 lat 8 mies.</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Zarządzałem pełnym cyklem projektów testów wielojęzycznych i funkcjonalnych.</li>
+                            <li>Koordynowałem harmonogramy i budżety z testerami kontraktowymi, żeby dowozić projekty na czas i bez przekraczania kosztów.</li>
+                            <li>Skróciłem czas testowania o 55% dzięki zmianom w procesie i automatyzacji, jeszcze bez narzędzi AI.</li>
+                            <li>Skróciłem cykl testów wydania z trzech miesięcy do jednej rundy trwającej około miesiąca.</li>
+                            <li>W części projektów osiągnąłem 100% pokrycia automatyzacją, z crawlerem, który sam wykrywał zmiany w produkcie.</li>
+                            <li>Prowadziłem zespół do celów w zakresie satysfakcji klientów i KPI biznesowych; odpowiadałem za obecność, oceny, coaching i rozwój.</li>
+                            <li>Wspierałem dział sprzedaży w pozyskiwaniu nowych klientów.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Lionbridge</h3>
+                            <a href="https://www.lionbridge.com" target="_blank" rel="noopener">lionbridge.com</a>
+                        </div>
+                        <span class="meta" data-span>lut 2006 – paź 2016 · 10 lat 9 mies.</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2015-07" data-to="2016-10">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Telco Testing Business Unit Manager</span></span>
+                                    <span class="meta" data-span>lip 2015 – paź 2016 · 1 rok 4 mies.</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Kierowałem globalnym zespołem liczącym do 38 osób (managerowie automatyzacji testów, liderzy i inżynierowie): szkolenia, coaching i rozwój.</li>
+                                <li>Nadzorowałem realizację wymagań klientów.</li>
+                                <li>Zarządzałem zasobami, rekrutacją, szkoleniami i oceną pracowników.</li>
+                                <li>Tworzyłem plany i procedury testów; prowadziłem projekty testowe zgodnie z przyjętymi wytycznymi.</li>
+                                <li>Wspierałem działania sprzedażowe.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <ol class="roles">
+                    <li class="role" data-from="2012-09" data-to="2015-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Senior Project Manager</span></span>
+                                <span class="meta" data-span>wrz 2012 – cze 2015 · 2 lata 10 mies.</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Zarządzałem złożonymi projektami od początku do końca: planowanie, harmonogramy, budżet i fakturowanie.</li>
+                            <li>Wspierałem liderów testów w produkcji; przygotowywałem plany projektów, materiały szkoleniowe i materiały dla dostawców.</li>
+                            <li>Odpowiadałem za alokację zasobów i raportowanie do klientów; dbałem o zgodność z procedurami.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2008-07" data-to="2012-08">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Lead</span></span>
+                                <span class="meta" data-span>lip 2008 – sie 2012 · 4 lata 2 mies.</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Przygotowywałem plany projektów, materiały szkoleniowe i wytyczne testowe.</li>
+                            <li>Odpowiadałem za harmonogramy, budżety, fakturowanie, alokację zasobów i raportowanie do klientów.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2006-11" data-to="2008-06">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Senior Test Engineer</span></span>
+                                <span class="meta" data-span>lis 2006 – cze 2008 · 1 rok 8 mies.</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Tworzyłem i wdrażałem plany testów; zarządzałem testami prowadzonymi przez inżynierów testów.</li>
+                            <li>Współpracowałem z zespołami testowymi w USA, Irlandii, Chinach, Finlandii i Japonii.</li>
+                            <li>Rozwiązywałem problemy techniczne; zarządzałem zasobami i raportowaniem czasu pracy.</li>
+                        </ul>
+                    </li>
+                    <li class="role" data-from="2006-02" data-to="2006-10">
+                        <button type="button" class="role-toggle" aria-expanded="false">
+                            <span class="role-main">
+                                <span class="role-title-row"><span class="role-title">Test Engineer</span></span>
+                                <span class="meta" data-span>lut 2006 – paź 2006 · 9 mies.</span>
+                            </span>
+                            <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                        </button>
+                        <ul class="bullets" hidden>
+                            <li>Weryfikowałem zlokalizowane oprogramowanie i dokumentację pod kątem zgodności ze specyfikacją.</li>
+                            <li>Realizowałem plany testów i zgłaszałem defekty zgodnie z wytycznymi projektu.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article class="company">
+                <div class="company-lead">
+                <header class="company-head">
+                        <div class="company-name">
+                            <h3>Altbit</h3>
+                            <a href="https://altbit.pl" target="_blank" rel="noopener">altbit.pl</a>
+                        </div>
+                        <span class="meta" data-span>maj 2005 – sty 2006 · 9 mies.</span>
+                    </header>
+                    <ol class="roles">
+                        <li class="role" data-from="2005-05" data-to="2006-01">
+                            <button type="button" class="role-toggle" aria-expanded="false">
+                                <span class="role-main">
+                                    <span class="role-title-row"><span class="role-title">Computer Hardware Specialist</span></span>
+                                    <span class="meta" data-span>maj 2005 – sty 2006 · 9 mies.</span>
+                                </span>
+                                <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
+                            </button>
+                            <ul class="bullets" hidden>
+                                <li>Składałem i naprawiałem sprzęt komputerowy.</li>
+                                <li>Budowałem i administrowałem sieci klientów firmowych.</li>
+                                <li>Pomagałem klientom firmowym rozwiązywać problemy z komputerami.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <section id="skills" class="side-section skills" aria-labelledby="skills-h">
+                <h2 id="skills-h">Umiejętności</h2>
+                <div class="skill-group">
+                    <h3>AI i inżynieria agentowa</h3>
+                    <ul class="chips">
+                        <li>Claude Code</li><li>OpenAI Codex CLI</li><li>Model Context Protocol (MCP)</li><li>Agent Skills</li><li>Subagents / multi-agent workflows</li><li>GitHub Copilot</li><li>Cursor</li><li>AI-assisted test automation</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Testowanie i automatyzacja</h3>
+                    <ul class="chips">
+                        <li>Selenium</li><li>Playwright</li><li>Appium</li><li>Postman</li><li>TestNG</li><li>JUnit</li><li>Jira</li><li>Xray</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>DevOps i CI/CD</h3>
+                    <ul class="chips">
+                        <li>Git / GitHub</li><li>Jenkins</li><li>Docker</li><li>Ansible</li><li>Podman</li><li>Forgejo / Woodpecker CI</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Sieci i infrastruktura</h3>
+                    <ul class="chips">
+                        <li>Linux (Rocky / RHEL)</li><li>Routing &amp; switching (MikroTik)</li><li>VLANs &amp; network segmentation</li><li>VPN (WireGuard)</li><li>DNS / DHCP</li><li>Virtualization (Proxmox)</li><li>Storage &amp; backup (TrueNAS, PBS)</li><li>Identity &amp; SSO (LDAP, Kerberos)</li><li>Monitoring &amp; alerting (Grafana, Prometheus)</li><li>TLS / PKI</li><li>Email (SMTP / IMAP)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Procesy i lokalizacja</h3>
+                    <ul class="chips">
+                        <li>SDLC</li><li>Agile / Scrum</li><li>Internationalization (i18n)</li><li>Full localization process</li><li>CAT tools</li><li>Localization testing</li>
+                    </ul>
+                </div>
+                <p class="skill-note">Czytam i piszę też w Javie, Pythonie, JavaScripcie, Ruby, Bashu, SQL-u i HTML/CSS.</p>
+            </section>
+
+            <section id="credentials" class="side-section" aria-labelledby="cert-h">
+                <h2 id="cert-h">Certyfikaty</h2>
+                <div class="entry">
+                    <span class="entry-title">ISTQB Advanced Level — Test Manager</span>
+                    <span class="meta">ID <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank" rel="noopener">5571-1</a></span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">ISTQB Foundation Level</span>
+                    <span class="meta">ID <a href="https://www.gasq.org/en/registration/expert/77784fe8-1e2e-4d4e-a2fc-695b3a89bafb.html" target="_blank" rel="noopener">08-CTFL-EU-4748-GASQ</a></span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">Professional Scrum Master I</span>
+                    <span class="meta">Scrum.org · ID <a href="https://www.scrum.org/user/1513397" target="_blank" rel="noopener">1181220</a></span>
+                </div>
+            </section>
+
+            <section id="education" class="side-section" aria-labelledby="edu-h">
+                <h2 id="edu-h">Wykształcenie</h2>
+                <div class="entry">
+                    <span class="entry-title">Magister astronomii</span>
+                    <span class="entry-sub">Uniwersytet Warszawski, Wydział Fizyki</span>
+                    <span class="meta">1999 – 2005</span>
+                </div>
+                <div class="entry">
+                    <span class="entry-title">Licencjat z fizyki</span>
+                    <span class="entry-sub">Metody komputerowe fizyki · Uniwersytet Warszawski</span>
+                    <span class="meta">1999 – 2003</span>
+                </div>
+            </section>
+
+            <section class="side-section languages" aria-labelledby="lang-h">
+                <h2 id="lang-h">Języki</h2>
+                <div class="lang"><span class="entry-title">Polski</span><span class="meta">ojczysty</span></div>
+                <div class="lang"><span class="entry-title">Angielski</span><span class="meta">C1 · zaawansowany</span></div>
+            </section>
+        </aside>
+
+        <div class="print-footer print-only" style="flex: 1 1 100%">
+            <span>Aktualna wersja: kolsut.net/pl</span>
+            <span>Wydrukowano <span id="printed-on"></span></span>
+        </div>
+    </main>
+
+    <section id="ai" class="ai wrap no-print" aria-labelledby="ai-h">
+        <div class="section-head">
+            <h2 id="ai-h">Jak pracuję z AI</h2>
+        </div>
+
+        <p class="ai-lede">Kiedyś, żeby sprawdzić pomysł, potrzebowałem całego zespołu. Teraz planuję pracę, przekazuję ją ekipie agentów AI, a swój czas poświęcam na to, czego one nie zrobią: decyduję, co jest ważne, i sprawdzam to, co zbudowały. Ten sam instynkt QA, dużo większy zasięg.</p>
+
+        <ol class="ai-flow" aria-label="Mój sposób pracy z AI">
+            <li>
+                <span class="ai-step">01</span>
+                <strong>Wyznaczam kierunek</strong>
+                <span>Cel, plan i zasady, spisane tak, żeby agenci mogli się ich trzymać.</span>
+            </li>
+            <li>
+                <span class="ai-step">02</span>
+                <strong>Agenci wykonują robotę</strong>
+                <span>Wyspecjalizowani subagenci z narzędziami (MCP) i skillami wielokrotnego użytku, często kilku naraz.</span>
+            </li>
+            <li>
+                <span class="ai-step">03</span>
+                <strong>Sprawdzam i wdrażam</strong>
+                <span>Testy, code review i ostatnie słowo w sprawie jakości. To zostaje po mojej stronie.</span>
+            </li>
+        </ol>
+
+        <div class="ai-cards">
+            <article class="ai-card">
+                <span class="ai-tag">Projektowanie agentów</span>
+                <h3>Zespół 11 specjalistów AI</h3>
+                <p>astro-agents to mój plugin do Claude Code z jedenastoma subagentami do badań astronomicznych: od przeglądu literatury po szkice publikacji, z własnym recenzentem, który sprawdza wyniki. Udostępniam go przez własny marketplace pluginów.</p>
+                <a href="https://github.com/kkolsut/astro-agents" target="_blank" rel="noopener">github.com/kkolsut/astro-agents</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Produkt zrobiony w pojedynkę</span>
+                <h3>Portal danych publicznych</h3>
+                <p>Polska Lokalna pokazuje oficjalne statystyki dla każdej gminy w Polsce: mapy, porównania i eksplorator danych. Zbudowałem ją w całości sam, od pipeline’u danych po wdrożenie.</p>
+                <a href="https://polska-lokalna.kolsut.net" target="_blank" rel="noopener">polska-lokalna.kolsut.net</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Infrastruktura</span>
+                <h3>Cały homelab jako kod</h3>
+                <p>Posegmentowana sieć i serwery zautomatyzowane za pomocą około 20 ról Ansible, do tego CI/CD i monitoring z alertami. Zbudowane i utrzymywane razem z Claude Code.</p>
+                <a href="https://github.com/kkolsut/meetup_presentation" target="_blank" rel="noopener" title="Slajdy z meetupu: How I've Over-Engineered My Homelab">github.com/kkolsut/meetup_presentation</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Ta strona</span>
+                <h3>CV, które czytasz</h3>
+                <p>Zbudowane z Claude Code, łącznie z mapą nieba za moim nazwiskiem: około 120 prawdziwych gwiazd rzutowanych ze współrzędnych katalogowych.</p>
+                <a href="https://github.com/kkolsut/resume" target="_blank" rel="noopener">github.com/kkolsut/resume</a>
+            </article>
+        </div>
+    </section>
+
+    <footer class="site-footer no-print">
+        <div class="wrap">
+            <span class="brand-line">
+                <svg class="brand-mark" aria-hidden="true" width="22" height="12" viewBox="0 0 28 16"><circle cx="4" cy="11" r="2.6"></circle><circle cx="14" cy="8" r="2.8"></circle><circle cx="24" cy="5" r="2.4"></circle></svg>
+                © <span id="year">2026</span> Krzysztof Kołsut
+            </span>
+            <a class="to-top" href="#top">
+                <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
+                Do góry
+            </a>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
