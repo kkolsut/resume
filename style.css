@@ -335,7 +335,8 @@ button {
     gap: 12px;
   }
 
-  .theme-switch {
+  .theme-switch,
+  .lang-switch {
     align-self: flex-start;
   }
 
@@ -422,6 +423,38 @@ button {
   cursor: pointer;
 }
 
+.lang-switch {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid var(--hero-line);
+  background: var(--hero-pill);
+}
+
+.lang-switch a {
+  width: 44px;
+  height: 38px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hero-muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lang-switch a[aria-current="page"] {
+  background: var(--hero-accent);
+  color: var(--on-hero-accent);
+}
+
+/* The active option also follows <html data-theme>, which is set before
+   first paint, so it doesn't fade in when script.js sets aria-pressed. */
+:root[data-theme="light"] .theme-switch [data-theme-option="light"],
+:root[data-theme="dark"] .theme-switch [data-theme-option="dark"],
+:root[data-theme="system"] .theme-switch [data-theme-option="system"],
 .theme-switch button[aria-pressed="true"] {
   background: var(--hero-accent);
   color: var(--on-hero-accent);
@@ -1240,6 +1273,7 @@ button {
 .more-menu button,
 .menu-btn,
 .theme-switch button,
+.lang-switch a,
 .topnav a,
 .chev,
 .to-top {
@@ -1277,7 +1311,8 @@ button {
     background: var(--accent-tint);
   }
 
-  .theme-switch button:not([aria-pressed="true"]):hover {
+  .theme-switch button:not([aria-pressed="true"]):hover,
+  .lang-switch a:not([aria-current="page"]):hover {
     color: var(--hero-ink);
     background: var(--accent-tint);
   }
@@ -1438,7 +1473,7 @@ button {
      first lines below them (padding cancelled by a negative margin) and are
      unbreakable: if that room isn't left on the page, the heading moves on. */
   .section-head,
-  .role-toggle,
+  .role-main,
   .side-section h2 {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -1459,9 +1494,6 @@ button {
     background-position: 0 calc(100% - 120px);
   }
 
-  .company {
-    margin-bottom: 20px;
-  }
 
   .company-name a {
     color: var(--accent);
@@ -1473,20 +1505,29 @@ button {
     display: block;
   }
 
-  /* Company name + first job form one unbreakable block
-     (Firefox doesn't support break-after: avoid). */
+  /* Roles may run onto the next page (bullets never split), so long jobs
+     don't leave half-empty pages. Headings reserve room for what follows
+     instead (Firefox doesn't support break-after: avoid).
+     Company wrappers are dissolved: Firefox won't move an unbreakable
+     heading to the next page when it is its container's first child. */
+  .company,
   .company-lead {
-    display: block;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    display: contents;
   }
 
   .company-lead + .roles {
     margin-top: 0;
   }
 
+  /* Unbreakable, with padding that reserves room for the first role's
+     title block (cancelled by the negative margin), so a company name
+     never ends a page on its own. */
   .company-head {
-    margin-bottom: 8px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 20px;
+    padding-bottom: 158px;
+    margin-bottom: -150px;
   }
 
   .company-name {
@@ -1498,17 +1539,22 @@ button {
     margin-top: 8px;
   }
 
-  /* Each job (title + bullets) stays on one page. */
-  .role {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  /* Firefox can't break a page right after a <button>, which pushed whole
+     roles to the next page. In print the toggle button is dissolved and
+     its inner block carries the title, the reserved room and the dot. */
+  .role-toggle {
+    display: contents;
   }
 
-  .role-toggle {
+  .role-main {
     display: block;
-    min-height: 0;
+    position: relative;
     padding: 6px 0 46px;
     margin-bottom: -40px;
+  }
+
+  .role-main > .meta {
+    display: block;
   }
 
   .bullets li {
@@ -1516,8 +1562,35 @@ button {
     page-break-inside: avoid;
   }
 
+  /* No bottom padding on roles: when only a role's padding overflows a
+     page, Firefox moves the whole role instead of trimming it (margins are
+     trimmed at a page break, so .bullets' bottom margin does the spacing). */
+  .role {
+    padding-bottom: 0;
+  }
+
+  /* The timeline dot sits on the role title, so it moves with the title
+     when a role starts on the next page. */
   .role::before {
+    display: none;
+  }
+
+  .role-main::before {
+    content: "";
+    position: absolute;
+    left: -35px;
     top: 14px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    background: var(--bg);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .role.current .role-main::before {
+    border-color: var(--accent);
+    background: var(--accent);
   }
 
   .bullets,
