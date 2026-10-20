@@ -206,6 +206,37 @@ button {
 .sky .rigel-glow { fill: var(--rigel-glow); }
 .sky .rigel { fill: var(--rigel); }
 
+/* Gentle twinkle: brightness dips briefly. Varied durations and offsets
+   (via nth-child) keep the stars out of sync. */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 1; }
+  60% { opacity: 0.45; }
+  75% { opacity: 1; }
+}
+
+.sky .stars circle,
+.sky .betel-glow,
+.sky .rigel-glow {
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+.sky .stars circle:nth-child(3n) { animation-duration: 7.5s; animation-delay: -2.1s; }
+.sky .stars circle:nth-child(3n + 1) { animation-duration: 5.2s; animation-delay: -3.7s; }
+.sky .stars circle:nth-child(4n) { animation-duration: 8.3s; animation-delay: -5.4s; }
+.sky .stars circle:nth-child(5n + 2) { animation-duration: 9.1s; animation-delay: -1.3s; }
+.sky .stars circle:nth-child(7n + 3) { animation-duration: 6.7s; animation-delay: -6.2s; }
+.sky .betel-glow { animation-duration: 7.9s; animation-delay: -2.8s; }
+.sky .rigel-glow { animation-duration: 6.4s; animation-delay: -4.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sky .stars circle,
+  .sky .betel-glow,
+  .sky .rigel-glow {
+    animation: none;
+  }
+}
+
 /* ---------- Header ---------- */
 
 /* Outside .hero (which clips overflow) so it can stick while scrolling. */
