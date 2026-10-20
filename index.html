@@ -57,10 +57,32 @@
                             <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
                         </button>
                     </div>
-                    <button type="button" class="pill-btn" data-print>
-                        <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                        Print
-                    </button>
+                    <div class="more">
+                        <button type="button" class="more-btn" aria-expanded="false" aria-controls="more-menu" aria-label="More actions" title="More actions">
+                            <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></svg>
+                        </button>
+                        <ul class="more-menu" id="more-menu">
+                            <li>
+                                <button type="button" data-print>
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                    Print / save as PDF
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="save-contact">
+                                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
+                                    Save contact (vCard)
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" id="copy-email">
+                                    <svg class="icon when-idle" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <svg class="icon when-copied" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="copy-label">Copy email address</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -217,34 +239,30 @@
                     <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
                     Get in touch
                 </a>
-                <button type="button" class="cta" data-print>
-                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>
-                    Download CV (PDF)
-                </button>
-                <button type="button" class="cta" id="save-contact">
-                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg>
-                    Save contact
-                </button>
+                <a class="cta-link" href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+                <a class="cta-link" href="https://github.com/kkolsut" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+                    GitHub
+                </a>
             </div>
 
             <ul id="contact" class="contact" aria-label="Contact">
                 <li>
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
                     <a href="mailto:krzysztof.kolsut@gmail.com">krzysztof.kolsut@gmail.com</a>
-                    <button type="button" class="copy-btn no-print" id="copy-email" aria-label="Copy email address" title="Copy email address">
-                        <svg class="icon when-idle" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        <svg class="icon when-copied" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" stroke-width="2.4"><path d="M20 6 9 17l-5-5"></path></svg>
-                    </button>
                 </li>
                 <li>
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
                     <a href="tel:+48502040315">+48 502 040 315</a>
                 </li>
-                <li>
+                <li class="print-only">
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     <a href="https://www.linkedin.com/in/krzysztof-kolsut-56654b51" target="_blank" rel="noopener" title="linkedin.com/in/krzysztof-kolsut-56654b51">linkedin.com/in/krzysztof-kolsut-56654b51</a>
                 </li>
-                <li>
+                <li class="print-only">
                     <svg class="icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
                     <a href="https://github.com/kkolsut" target="_blank" rel="noopener">github.com/kkolsut</a>
                 </li>
@@ -689,22 +707,49 @@
                 if (desktop.matches) setMenu(false);
             });
 
+            // ---- More actions menu (desktop dropdown; inline in the mobile menu) ----
+            var more = header.querySelector('.more');
+            var moreBtn = more.querySelector('.more-btn');
+
+            function setMore(open) {
+                more.classList.toggle('open', open);
+                moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+
+            moreBtn.addEventListener('click', function () {
+                setMore(!more.classList.contains('open'));
+            });
+            document.addEventListener('click', function (e) {
+                if (!more.contains(e.target)) setMore(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && more.classList.contains('open')) {
+                    setMore(false);
+                    moreBtn.focus();
+                }
+            });
+
             // ---- Print ----
             document.querySelectorAll('[data-print]').forEach(function (b) {
-                b.addEventListener('click', function () { window.print(); });
+                b.addEventListener('click', function () {
+                    setMore(false);
+                    setMenu(false);
+                    window.print();
+                });
             });
 
             // ---- Copy email ----
             var copyBtn = document.getElementById('copy-email');
+            var copyLabel = copyBtn.querySelector('.copy-label');
             var copyTimer;
             copyBtn.addEventListener('click', function () {
                 try { navigator.clipboard.writeText('krzysztof.kolsut@gmail.com'); } catch (e) {}
                 copyBtn.classList.add('copied');
-                copyBtn.title = 'Copied';
+                copyLabel.textContent = 'Copied!';
                 clearTimeout(copyTimer);
                 copyTimer = setTimeout(function () {
                     copyBtn.classList.remove('copied');
-                    copyBtn.title = 'Copy email address';
+                    copyLabel.textContent = 'Copy email address';
                 }, 1800);
             });
 

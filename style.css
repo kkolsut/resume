@@ -5,6 +5,10 @@
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
+  /* Shared height of section headers (incl. underline), so the Experience
+     and sidebar underlines line up despite different font sizes. */
+  --section-head-h: 62px;
+
   /* page */
   --bg: #FAF9F6;
   --surface: #FFFFFF;
@@ -324,8 +328,33 @@ button {
     border-bottom: 1px solid var(--hero-line);
   }
 
-  .topbar-actions {
-    justify-content: space-between;
+  .site-header .topbar-actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .theme-switch {
+    align-self: flex-start;
+  }
+
+  .site-header .more-btn {
+    display: none;
+  }
+
+  .site-header .more-menu {
+    display: block;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .site-header .more-menu button {
+    padding: 12px 4px;
   }
 }
 
@@ -398,20 +427,78 @@ button {
   color: var(--on-hero-accent);
 }
 
-.pill-btn {
-  min-height: 44px;
+.more {
+  position: relative;
+}
+
+.more-btn {
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 18px;
+  justify-content: center;
+  padding: 0;
   border-radius: 999px;
   border: 1px solid var(--hero-line);
   background: transparent;
   color: var(--hero-ink);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
   cursor: pointer;
+}
+
+.more.open .more-btn {
+  border-color: var(--hero-accent);
+  color: var(--hero-accent);
+}
+
+.more-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  min-width: 240px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 12px;
+  border: 1px solid var(--hero-line);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.more.open .more-menu {
+  display: block;
+}
+
+.more-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--hero-ink);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.more-menu .icon {
+  color: var(--hero-muted);
+}
+
+#copy-email .when-copied,
+#copy-email.copied .when-idle {
+  display: none;
+}
+
+#copy-email.copied .when-copied {
+  display: block;
+  color: var(--ok-ink);
 }
 
 .hero-body {
@@ -481,7 +568,8 @@ button {
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 10px 28px;
 }
 
 .cta {
@@ -506,8 +594,21 @@ button {
   color: var(--on-hero-accent);
 }
 
-/* Contacts and stats share one 4-column grid so they line up. */
-.contact,
+.cta-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hero-ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-link .icon {
+  color: var(--hero-muted);
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -515,10 +616,12 @@ button {
 }
 
 .contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
   list-style: none;
   margin: 0;
   padding: 0;
-  row-gap: 8px;
   font-size: 14px;
 }
 
@@ -530,8 +633,12 @@ button {
   white-space: nowrap;
 }
 
+.contact .print-only {
+  display: none;
+}
+
 .contact .icon {
-  color: var(--hero-accent);
+  color: var(--hero-muted);
 }
 
 .contact li {
@@ -542,43 +649,12 @@ button {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--hero-ink);
+  color: var(--hero-muted);
   text-decoration: none;
 }
 
 .contact a:hover {
   text-decoration: underline;
-}
-
-.copy-btn {
-  width: 32px;
-  height: 32px;
-  flex: none;
-  padding: 0;
-  border-radius: 999px;
-  border: 1px solid var(--hero-line);
-  background: transparent;
-  color: var(--hero-muted);
-  font-size: 12px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-.copy-btn:hover {
-  color: var(--hero-ink);
-}
-
-.copy-btn .when-copied,
-.copy-btn.copied .when-idle {
-  display: none;
-}
-
-.copy-btn.copied .when-copied {
-  display: block;
-  color: var(--ok-ink);
 }
 
 .stats {
@@ -587,14 +663,12 @@ button {
 }
 
 @media (max-width: 1199px) {
-  .contact,
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 599px) {
-  .contact,
   .stats {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -658,6 +732,7 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   gap: 12px 16px;
+  min-height: var(--section-head-h);
   padding-bottom: 16px;
   border-bottom: 2px solid var(--ink);
 }
@@ -878,6 +953,16 @@ button {
   letter-spacing: -0.01em;
 }
 
+/* Screen only: print lays headings out as blocks (Firefox ignores
+   break-inside on flex containers). */
+@media screen {
+  .side-section h2 {
+    display: flex;
+    align-items: flex-end;
+    min-height: var(--section-head-h);
+  }
+}
+
 .skills {
   gap: 20px;
 }
@@ -996,10 +1081,12 @@ button {
 
 /* ---------- Hover feedback ---------- */
 
-.pill-btn,
 .cta,
+.cta-link,
 .ghost-btn,
-.copy-btn,
+.more-btn,
+.more-menu button,
+.contact a,
 .menu-btn,
 .theme-switch button,
 .topnav a,
@@ -1010,9 +1097,8 @@ button {
 
 /* Only on devices with real hover, so states don't stick after a tap. */
 @media (hover: hover) {
-  .pill-btn:hover,
   .cta:hover,
-  .copy-btn:hover,
+  .more-btn:hover,
   .menu-btn:hover {
     border-color: var(--hero-accent);
     color: var(--hero-accent);
@@ -1023,6 +1109,16 @@ button {
     border-color: var(--hero-accent-hover);
     background: var(--hero-accent-hover);
     color: var(--on-hero-accent);
+  }
+
+  .cta-link:hover,
+  .contact a:hover {
+    color: var(--hero-accent);
+  }
+
+  .more-menu button:hover {
+    background: var(--accent-tint);
+    color: var(--hero-accent);
   }
 
   .ghost-btn:hover {
@@ -1155,7 +1251,17 @@ button {
   }
 
   .contact {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 4px;
+  }
+
+  .contact a {
+    color: var(--hero-ink);
+  }
+
+  .contact .print-only {
+    display: flex;
   }
 
   .stats dd {
