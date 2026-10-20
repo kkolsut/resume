@@ -23,6 +23,8 @@
   --hero-pill: #FFFFFF;
   --hero-accent: #A84B0C;
   --on-hero-accent: #FFFFFF;
+  --hero-accent-hover: #8A3D08;
+  --accent-tint: rgba(168, 75, 12, 0.08);
 
   /* the blue half of the duo palette */
   --blue: #2B4BA8;
@@ -61,6 +63,8 @@
   --hero-pill: rgba(244, 241, 234, 0.05);
   --hero-accent: #F5B455;
   --on-hero-accent: #101826;
+  --hero-accent-hover: #F8C77A;
+  --accent-tint: rgba(245, 180, 85, 0.12);
 
   --blue: #9DB2F5;
   --blue-bg: rgba(157, 178, 245, 0.10);
@@ -86,6 +90,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchored headings clear of the sticky header. */
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -149,7 +155,7 @@ button {
 .orion {
   position: absolute;
   right: max(24px, calc((100% - 1160px) / 2 + 24px));
-  top: 100px;
+  top: 27px;
   width: min(30%, 340px);
   height: auto;
   pointer-events: none;
@@ -166,15 +172,96 @@ button {
 .orion .rigel-glow { fill: var(--rigel-glow); }
 .orion .rigel { fill: var(--rigel); }
 
+/* ---------- Header ---------- */
+
+/* Outside .hero (which clips overflow) so it can stick while scrolling. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--hero);
+  color: var(--hero-ink);
+  border-bottom: 1px solid var(--hero-line);
+}
+
 .topbar {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 12px 24px;
   padding-top: 14px;
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--hero-line);
+}
+
+.topbar-menu {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.menu-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--hero-line);
+  background: transparent;
+  color: var(--hero-ink);
+  cursor: pointer;
+}
+
+.menu-btn .when-open,
+.site-header.open .menu-btn .when-closed {
+  display: none;
+}
+
+.site-header.open .menu-btn .when-open {
+  display: block;
+}
+
+/* Below this width the nav no longer fits on one row: collapse it. */
+@media (max-width: 1079px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .menu-btn {
+    display: inline-flex;
+  }
+
+  .topbar-menu {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding-bottom: 8px;
+    max-height: calc(100dvh - 73px);
+    overflow-y: auto;
+  }
+
+  .site-header.open .topbar-menu {
+    display: flex;
+  }
+
+  .topnav {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .topnav a {
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--hero-line);
+  }
+
+  .topbar-actions {
+    justify-content: space-between;
+  }
 }
 
 .brand {
@@ -837,6 +924,68 @@ button {
   gap: 12px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+}
+
+/* ---------- Hover feedback ---------- */
+
+.pill-btn,
+.cta,
+.ghost-btn,
+.copy-btn,
+.menu-btn,
+.theme-switch button,
+.topnav a,
+.chev,
+.to-top {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+/* Only on devices with real hover, so states don't stick after a tap. */
+@media (hover: hover) {
+  .pill-btn:hover,
+  .cta:hover,
+  .copy-btn:hover,
+  .menu-btn:hover {
+    border-color: var(--hero-accent);
+    color: var(--hero-accent);
+    background: var(--accent-tint);
+  }
+
+  .cta.primary:hover {
+    border-color: var(--hero-accent-hover);
+    background: var(--hero-accent-hover);
+    color: var(--on-hero-accent);
+  }
+
+  .ghost-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-tint);
+  }
+
+  .theme-switch button:not([aria-pressed="true"]):hover {
+    color: var(--hero-ink);
+    background: var(--accent-tint);
+  }
+
+  .role-toggle:hover .chev {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .to-top:hover {
+    color: var(--hero-accent);
+  }
+}
+
+@media (hover: hover) and (min-width: 1080px) {
+  .topnav a {
+    border-radius: 999px;
+  }
+
+  .topnav a:hover {
+    background: var(--accent-tint);
+  }
 }
 
 /* ---------- Print ---------- */
