@@ -936,7 +936,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  padding-top: 72px;
+  padding-bottom: 96px;
 }
 
 .ai-lede {
@@ -1564,51 +1564,6 @@ button {
 
   .print-footer {
     margin-top: 16px;
-  }
-
-  .ai {
-    display: block;
-    padding-top: 20px;
-  }
-
-  .ai-lede {
-    margin-bottom: 12px;
-    font-size: 11pt;
-  }
-
-  /* A4 is narrower than the mobile breakpoint: keep three steps in a row. */
-  .ai-flow {
-    margin-bottom: 12px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .ai-flow li,
-  .ai-card {
-    padding: 10px 12px;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .ai-flow li:not(:last-child)::after {
-    top: 50%;
-    bottom: auto;
-    left: auto;
-    right: -13px;
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .ai-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .ai-card h3 {
-    font-size: 13pt;
-  }
-
-  .ai-card a {
-    color: var(--accent);
   }
 
   .chips li {

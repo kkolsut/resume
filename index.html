@@ -39,11 +39,11 @@
             </button>
             <div class="topbar-menu" id="site-menu">
                 <nav class="topnav" aria-label="Sections">
-                    <a href="#ai">AI</a>
                     <a href="#experience">Experience</a>
                     <a href="#skills">Skills</a>
                     <a href="#credentials">Certifications</a>
                     <a href="#education">Education</a>
+                    <a href="#ai">AI</a>
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="topbar-actions">
@@ -291,59 +291,6 @@
                     <dd>−55%</dd>
                 </div>
             </dl>
-        </div>
-    </section>
-
-    <section id="ai" class="ai wrap" aria-labelledby="ai-h">
-        <div class="section-head">
-            <h2 id="ai-h">How I work with AI</h2>
-        </div>
-
-        <p class="ai-lede">I used to need a whole team to try out an idea. Now I plan the work, hand it to a crew of AI agents, and spend my own time on what they can't do: deciding what matters and checking what they build. Same QA instincts, much bigger reach.</p>
-
-        <ol class="ai-flow" aria-label="My AI workflow">
-            <li>
-                <span class="ai-step">01</span>
-                <strong>I set the direction</strong>
-                <span>Goal, plan and guardrails, written down so the agents can follow them.</span>
-            </li>
-            <li>
-                <span class="ai-step">02</span>
-                <strong>Agents do the legwork</strong>
-                <span>Specialised subagents with tools (MCP) and reusable skills, often several in parallel.</span>
-            </li>
-            <li>
-                <span class="ai-step">03</span>
-                <strong>I review and ship</strong>
-                <span>Tests, code review and the final call on quality. That part stays mine.</span>
-            </li>
-        </ol>
-
-        <div class="ai-cards">
-            <article class="ai-card">
-                <span class="ai-tag">Agent design</span>
-                <h3>A team of 11 AI specialists</h3>
-                <p>astro-agents is my Claude Code plugin with eleven subagents for astronomy research, from literature search to paper drafts, with its own referee that checks the results. I distribute it through my own plugin marketplace.</p>
-                <a href="https://github.com/kkolsut/astro-agents" target="_blank" rel="noopener">github.com/kkolsut/astro-agents</a>
-            </article>
-            <article class="ai-card">
-                <span class="ai-tag">Product, built solo</span>
-                <h3>A public data portal</h3>
-                <p>Polska Lokalna shows official statistics for every Polish municipality: maps, comparisons and a data explorer. I built all of it on my own, from the data pipeline to deployment.</p>
-                <a href="https://polska-lokalna.kolsut.net" target="_blank" rel="noopener">polska-lokalna.kolsut.net</a>
-            </article>
-            <article class="ai-card">
-                <span class="ai-tag">Infrastructure</span>
-                <h3>My whole homelab, as code</h3>
-                <p>A segmented network and server stack automated with about 20 Ansible roles, plus CI/CD and monitoring with alerts. Built and maintained together with Claude Code.</p>
-                <a href="https://github.com/kkolsut/meetup_presentation" target="_blank" rel="noopener" title="Meetup slides: How I've Over-Engineered My Homelab">github.com/kkolsut/meetup_presentation</a>
-            </article>
-            <article class="ai-card">
-                <span class="ai-tag">This page</span>
-                <h3>The CV you're reading</h3>
-                <p>Built with Claude Code, including the star map behind my name: about 120 real stars, projected from catalogue coordinates.</p>
-                <a href="https://github.com/kkolsut/resume" target="_blank" rel="noopener">github.com/kkolsut/resume</a>
-            </article>
         </div>
     </section>
 
@@ -636,6 +583,59 @@
             <span>Printed <span id="printed-on"></span></span>
         </div>
     </main>
+
+    <section id="ai" class="ai wrap no-print" aria-labelledby="ai-h">
+        <div class="section-head">
+            <h2 id="ai-h">How I work with AI</h2>
+        </div>
+
+        <p class="ai-lede">I used to need a whole team to try out an idea. Now I plan the work, hand it to a crew of AI agents, and spend my own time on what they can't do: deciding what matters and checking what they build. Same QA instincts, much bigger reach.</p>
+
+        <ol class="ai-flow" aria-label="My AI workflow">
+            <li>
+                <span class="ai-step">01</span>
+                <strong>I set the direction</strong>
+                <span>Goal, plan and guardrails, written down so the agents can follow them.</span>
+            </li>
+            <li>
+                <span class="ai-step">02</span>
+                <strong>Agents do the legwork</strong>
+                <span>Specialised subagents with tools (MCP) and reusable skills, often several in parallel.</span>
+            </li>
+            <li>
+                <span class="ai-step">03</span>
+                <strong>I review and ship</strong>
+                <span>Tests, code review and the final call on quality. That part stays mine.</span>
+            </li>
+        </ol>
+
+        <div class="ai-cards">
+            <article class="ai-card">
+                <span class="ai-tag">Agent design</span>
+                <h3>A team of 11 AI specialists</h3>
+                <p>astro-agents is my Claude Code plugin with eleven subagents for astronomy research, from literature search to paper drafts, with its own referee that checks the results. I distribute it through my own plugin marketplace.</p>
+                <a href="https://github.com/kkolsut/astro-agents" target="_blank" rel="noopener">github.com/kkolsut/astro-agents</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Product, built solo</span>
+                <h3>A public data portal</h3>
+                <p>Polska Lokalna shows official statistics for every Polish municipality: maps, comparisons and a data explorer. I built all of it on my own, from the data pipeline to deployment.</p>
+                <a href="https://polska-lokalna.kolsut.net" target="_blank" rel="noopener">polska-lokalna.kolsut.net</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">Infrastructure</span>
+                <h3>My whole homelab, as code</h3>
+                <p>A segmented network and server stack automated with about 20 Ansible roles, plus CI/CD and monitoring with alerts. Built and maintained together with Claude Code.</p>
+                <a href="https://github.com/kkolsut/meetup_presentation" target="_blank" rel="noopener" title="Meetup slides: How I've Over-Engineered My Homelab">github.com/kkolsut/meetup_presentation</a>
+            </article>
+            <article class="ai-card">
+                <span class="ai-tag">This page</span>
+                <h3>The CV you're reading</h3>
+                <p>Built with Claude Code, including the star map behind my name: about 120 real stars, projected from catalogue coordinates.</p>
+                <a href="https://github.com/kkolsut/resume" target="_blank" rel="noopener">github.com/kkolsut/resume</a>
+            </article>
+        </div>
+    </section>
 
     <footer class="site-footer no-print">
         <div class="wrap">
