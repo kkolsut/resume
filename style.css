@@ -930,6 +930,149 @@ button {
   padding-left: 4px;
 }
 
+/* ---------- How I work with AI ---------- */
+
+.ai {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 72px;
+}
+
+.ai-lede {
+  margin: 0;
+  max-width: 64ch;
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.6;
+  color: var(--ink2);
+  text-wrap: pretty;
+}
+
+/* Three steps: me -> agents -> me. The agent step is blue, mine are orange. */
+.ai-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ai-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.ai-flow li:nth-child(2) {
+  border-color: var(--blue-border);
+  background: var(--blue-bg);
+}
+
+/* Arrow in the gap between steps. */
+.ai-flow li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -17px;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid var(--muted);
+  border-right: 2px solid var(--muted);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ai-step {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.ai-flow li:nth-child(2) .ai-step {
+  color: var(--blue);
+}
+
+.ai-flow strong {
+  font-size: 17px;
+}
+
+.ai-flow li > span:last-child {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ai-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ai-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.ai-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.ai-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ai-card p {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink2);
+}
+
+.ai-card a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blue);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ai-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 759px) {
+  .ai-flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .ai-flow li:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 28px;
+    bottom: -15px;
+    transform: rotate(135deg);
+  }
+}
+
 /* ---------- Sidebar ---------- */
 
 .sidebar {
@@ -1025,6 +1168,12 @@ button {
 }
 
 .entry .meta a {
+  color: var(--muted);
+}
+
+.skill-note {
+  margin: 0;
+  font-size: 13px;
   color: var(--muted);
 }
 
@@ -1415,6 +1564,51 @@ button {
 
   .print-footer {
     margin-top: 16px;
+  }
+
+  .ai {
+    display: block;
+    padding-top: 20px;
+  }
+
+  .ai-lede {
+    margin-bottom: 12px;
+    font-size: 11pt;
+  }
+
+  /* A4 is narrower than the mobile breakpoint: keep three steps in a row. */
+  .ai-flow {
+    margin-bottom: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .ai-flow li,
+  .ai-card {
+    padding: 10px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ai-flow li:not(:last-child)::after {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: -13px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .ai-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ai-card h3 {
+    font-size: 13pt;
+  }
+
+  .ai-card a {
+    color: var(--accent);
   }
 
   .chips li {
