@@ -9,9 +9,16 @@
 
     <script>
         // Apply the saved theme before first paint to avoid a flash.
+        // A ?theme= from the language switch wins (file:// pages don't share
+        // localStorage); the default is the system theme.
         (function () {
-            var pref = 'light';
-            try { pref = localStorage.getItem('theme') || 'light'; } catch (e) {}
+            var pref = 'system';
+            try { pref = localStorage.getItem('theme') || 'system'; } catch (e) {}
+            var fromUrl = new URLSearchParams(location.search).get('theme');
+            if (fromUrl === 'light' || fromUrl === 'dark' || fromUrl === 'system') {
+                pref = fromUrl;
+                try { localStorage.setItem('theme', pref); } catch (e) {}
+            }
             var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             document.documentElement.setAttribute('data-theme', pref);
             document.documentElement.setAttribute('data-scheme', dark ? 'dark' : 'light');
@@ -24,6 +31,8 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <link rel="alternate" hreflang="en" href="https://kolsut.net/">
+    <link rel="alternate" hreflang="pl" href="https://kolsut.net/pl/">
 </head>
 
 <body id="top">
@@ -47,6 +56,10 @@
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="topbar-actions">
+                    <nav class="lang-switch" aria-label="Language">
+                        <a href="index.html" hreflang="en" lang="en" aria-current="page" title="English">EN</a>
+                        <a href="pl/index.html" hreflang="pl" lang="pl" title="Polski">PL</a>
+                    </nav>
                     <div class="theme-switch" role="group" aria-label="Colour theme">
                         <button type="button" data-theme-option="light" aria-pressed="false" aria-label="Light theme" title="Light theme">
                             <svg class="icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
@@ -323,7 +336,6 @@
                                 <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
                             </button>
                             <ul class="bullets">
-                                <li>Lead a global QA organisation of test managers, automation architects and quality engineers, and set enterprise-wide testing standards.</li>
                                 <li>Coach and mentor teams; recruit, onboard and manage performance at every level.</li>
                                 <li>Define and track quality metrics and KPIs, reporting insights to executive leadership.</li>
                                 <li>Establish QA frameworks, testing processes and automation strategy across all products.</li>
@@ -359,7 +371,6 @@
                             </button>
                             <ul class="bullets" hidden>
                                 <li>Grew the testing business from about $60k to $700k–800k in monthly revenue.</li>
-                                <li>Led a global team of up to 38 test-automation managers, leads and engineers through training, coaching and development.</li>
                                 <li>Hired dozens of people and owned recruitment, selection, training and evaluation.</li>
                                 <li>Forecast and analysed revenue growth, profitability, quality and retention; set and monitored team KPIs.</li>
                                 <li>Wrote policies, procedures and SOPs.</li>
@@ -410,6 +421,7 @@
                                 <span class="chev no-print" aria-hidden="true"><svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></span>
                             </button>
                             <ul class="bullets" hidden>
+                                <li>Led a global team of up to 38 test-automation managers, leads and engineers through training, coaching and development.</li>
                                 <li>Supervised implementation of customer requirements.</li>
                                 <li>Managed resources, recruitment, training and performance evaluation.</li>
                                 <li>Created test plans and procedures; ran testing projects to established guidelines.</li>
@@ -650,181 +662,7 @@
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var root = document.documentElement;
-            var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            var now = new Date();
-            var cur = [now.getFullYear(), now.getMonth() + 1];
-
-            // ---- Theme: light / dark / system ----
-            var mq = window.matchMedia('(prefers-color-scheme: dark)');
-            var themeButtons = document.querySelectorAll('[data-theme-option]');
-
-            function applyTheme(pref) {
-                var dark = pref === 'dark' || (pref === 'system' && mq.matches);
-                root.setAttribute('data-theme', pref);
-                root.setAttribute('data-scheme', dark ? 'dark' : 'light');
-                themeButtons.forEach(function (b) {
-                    b.setAttribute('aria-pressed', b.dataset.themeOption === pref ? 'true' : 'false');
-                });
-            }
-
-            themeButtons.forEach(function (b) {
-                b.addEventListener('click', function () {
-                    var pref = b.dataset.themeOption;
-                    try { localStorage.setItem('theme', pref); } catch (e) {}
-                    applyTheme(pref);
-                });
-            });
-            mq.addEventListener('change', function () {
-                if (root.getAttribute('data-theme') === 'system') applyTheme('system');
-            });
-            applyTheme(root.getAttribute('data-theme') || 'light');
-
-            // ---- Dates & durations ----
-            function parse(s) {
-                if (!s) return null;
-                var p = s.split('-');
-                return [+p[0], +p[1]];
-            }
-            function months(a, b) { return (b[0] - a[0]) * 12 + (b[1] - a[1]) + 1; }
-            function fmt(d) { return d ? MON[d[1] - 1] + ' ' + d[0] : 'Present'; }
-            function dur(m) {
-                var y = Math.floor(m / 12), r = m % 12;
-                return [y ? y + (y === 1 ? ' yr' : ' yrs') : '', r ? r + ' mo' : ''].filter(Boolean).join(' ');
-            }
-            function spanLabel(from, to) { return fmt(from) + ' – ' + fmt(to) + ' · ' + dur(months(from, to || cur)); }
-
-            var allRoles = document.querySelectorAll('.role');
-            allRoles.forEach(function (role) {
-                var from = parse(role.dataset.from), to = parse(role.dataset.to);
-                role.querySelector('[data-span]').textContent = spanLabel(from, to);
-            });
-            document.querySelectorAll('.company').forEach(function (co) {
-                var roles = co.querySelectorAll('.role');
-                var first = parse(roles[roles.length - 1].dataset.from);
-                var last = parse(roles[0].dataset.to);
-                co.querySelector('.company-head [data-span]').textContent = spanLabel(first, last);
-            });
-
-            document.getElementById('stat-years').textContent = Math.floor(months([2006, 2], cur) / 12) + '+';
-            document.getElementById('year').textContent = now.getFullYear();
-            document.getElementById('printed-on').textContent = now.getDate() + ' ' + MON[now.getMonth()] + ' ' + now.getFullYear();
-
-            // ---- Expand / collapse roles ----
-            var toggles = document.querySelectorAll('.role-toggle');
-            var toggleAll = document.getElementById('toggle-all');
-
-            function setOpen(btn, open) {
-                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-                btn.nextElementSibling.hidden = !open;
-            }
-            function allOpen() {
-                return Array.prototype.every.call(toggles, function (b) { return b.getAttribute('aria-expanded') === 'true'; });
-            }
-            function syncToggleAll() {
-                toggleAll.textContent = allOpen() ? 'Collapse all' : 'Expand all';
-            }
-
-            toggles.forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    setOpen(btn, btn.getAttribute('aria-expanded') !== 'true');
-                    syncToggleAll();
-                });
-            });
-            toggleAll.addEventListener('click', function () {
-                var open = !allOpen();
-                toggles.forEach(function (b) { setOpen(b, open); });
-                syncToggleAll();
-            });
-            syncToggleAll();
-
-            // ---- Mobile menu ----
-            var header = document.querySelector('.site-header');
-            var menuBtn = header.querySelector('.menu-btn');
-            var desktop = window.matchMedia('(min-width: 1080px)');
-
-            function setMenu(open) {
-                header.classList.toggle('open', open);
-                menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-                menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-            }
-
-            menuBtn.addEventListener('click', function () {
-                setMenu(!header.classList.contains('open'));
-            });
-            header.querySelectorAll('.topnav a').forEach(function (a) {
-                a.addEventListener('click', function () { setMenu(false); });
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && header.classList.contains('open')) {
-                    setMenu(false);
-                    menuBtn.focus();
-                }
-            });
-            desktop.addEventListener('change', function () {
-                if (desktop.matches) setMenu(false);
-            });
-
-            // ---- More actions menu (desktop dropdown; inline in the mobile menu) ----
-            var more = header.querySelector('.more');
-            var moreBtn = more.querySelector('.more-btn');
-
-            function setMore(open) {
-                more.classList.toggle('open', open);
-                moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
-
-            moreBtn.addEventListener('click', function () {
-                setMore(!more.classList.contains('open'));
-            });
-            document.addEventListener('click', function (e) {
-                if (!more.contains(e.target)) setMore(false);
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && more.classList.contains('open')) {
-                    setMore(false);
-                    moreBtn.focus();
-                }
-            });
-
-            // ---- Print ----
-            document.querySelectorAll('[data-print]').forEach(function (b) {
-                b.addEventListener('click', function () {
-                    setMore(false);
-                    setMenu(false);
-                    window.print();
-                });
-            });
-
-            // ---- Copy email ----
-            var copyBtn = document.getElementById('copy-email');
-            var copyLabel = copyBtn.querySelector('.copy-label');
-            var copyTimer;
-            copyBtn.addEventListener('click', function () {
-                try { navigator.clipboard.writeText('krzysztof.kolsut@gmail.com'); } catch (e) {}
-                copyBtn.classList.add('copied');
-                copyLabel.textContent = 'Copied!';
-                clearTimeout(copyTimer);
-                copyTimer = setTimeout(function () {
-                    copyBtn.classList.remove('copied');
-                    copyLabel.textContent = 'Copy email address';
-                }, 1800);
-            });
-
-            // ---- Save contact (vCard) ----
-            document.getElementById('save-contact').addEventListener('click', function () {
-                var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:Kołsut;Krzysztof;;;', 'FN:Krzysztof Kołsut', 'TITLE:Head of Quality Assurance', 'ORG:Visuality', 'EMAIL;TYPE=INTERNET:krzysztof.kolsut@gmail.com', 'TEL;TYPE=CELL:+48502040315', 'URL:https://kolsut.net', 'END:VCARD'].join('\r\n');
-                var u = URL.createObjectURL(new Blob([v], { type: 'text/vcard' }));
-                var a = document.createElement('a');
-                a.href = u;
-                a.download = 'krzysztof-kolsut.vcf';
-                a.click();
-                setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
-            });
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
