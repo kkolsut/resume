@@ -609,16 +609,27 @@ button {
   color: var(--hero-muted);
 }
 
+/* Phones: full-width primary action, profile links in one row below. */
+@media (max-width: 599px) {
+  .cta-row {
+    gap: 8px 24px;
+  }
+
+  .cta.primary {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 32px;
 }
 
+/* Print only: on screen the CTA row covers email, phone and profiles. */
 .contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 28px;
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -631,10 +642,6 @@ button {
   gap: 8px;
   min-height: 32px;
   white-space: nowrap;
-}
-
-.contact .print-only {
-  display: none;
 }
 
 .contact .icon {
@@ -651,10 +658,6 @@ button {
   text-overflow: ellipsis;
   color: var(--hero-muted);
   text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
 }
 
 .stats {
@@ -1086,7 +1089,6 @@ button {
 .ghost-btn,
 .more-btn,
 .more-menu button,
-.contact a,
 .menu-btn,
 .theme-switch button,
 .topnav a,
@@ -1111,8 +1113,7 @@ button {
     color: var(--on-hero-accent);
   }
 
-  .cta-link:hover,
-  .contact a:hover {
+  .cta-link:hover {
     color: var(--hero-accent);
   }
 
@@ -1260,9 +1261,6 @@ button {
     color: var(--hero-ink);
   }
 
-  .contact .print-only {
-    display: flex;
-  }
 
   .stats dd {
     font-size: 22pt;
