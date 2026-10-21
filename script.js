@@ -63,6 +63,13 @@
     });
     applyTheme(root.getAttribute('data-theme') || 'system');
 
+    // ---- Twinkle: random speed and phase per star ----
+    document.querySelectorAll('.sky .stars circle, .sky .betel-glow, .sky .rigel-glow').forEach(function (c) {
+        var d = 2 + Math.random() * 2.5;
+        c.style.animationDuration = d.toFixed(2) + 's';
+        c.style.animationDelay = (-Math.random() * d).toFixed(2) + 's';
+    });
+
     // ---- Dates & durations ----
     function parse(s) {
         if (!s) return null;
