@@ -210,24 +210,6 @@ button {
 .sky .rigel-glow { fill: var(--rigel-glow); }
 .sky .rigel { fill: var(--rigel); }
 
-/* Diurnal motion: the whole sky turns slowly about the north celestial
-   pole, which sits ~90° (≈1350 user units at the belt's scale) above Orion.
-   East is on the left, so stars drift left to right (anticlockwise about
-   the pole). Only a few degrees fit in frame, so each pass fades out at the
-   end and restarts, keeping the motion one-way. */
-@keyframes sky-turn {
-  0% { transform: rotate(2.5deg); opacity: 0; }
-  6% { opacity: 1; }
-  94% { opacity: 1; }
-  100% { transform: rotate(-2.5deg); opacity: 0; }
-}
-
-.sky-turn {
-  transform-box: view-box;
-  transform-origin: 1180px -950px;
-  animation: sky-turn 240s linear -120s infinite;
-}
-
 /* Twinkle: brightness and size dip briefly (never above the drawn size).
    script.js gives every star a random duration and offset; the nth-child
    values are a fallback that keeps stars out of sync without JS. */
@@ -255,7 +237,6 @@ button {
 .sky .rigel-glow { animation-duration: 3.2s; animation-delay: -2.3s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .sky-turn,
   .sky .stars circle,
   .sky .betel-glow,
   .sky .rigel-glow {
