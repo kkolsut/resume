@@ -210,28 +210,31 @@ button {
 .sky .rigel-glow { fill: var(--rigel-glow); }
 .sky .rigel { fill: var(--rigel); }
 
-/* Gentle twinkle: brightness dips briefly. Varied durations and offsets
-   (via nth-child) keep the stars out of sync. */
+/* Twinkle: brightness and size dip briefly (never above the drawn size).
+   script.js gives every star a random duration and offset; the nth-child
+   values are a fallback that keeps stars out of sync without JS. */
 @keyframes twinkle {
-  0%, 100% { opacity: 1; }
-  45% { opacity: 1; }
-  60% { opacity: 0.45; }
-  75% { opacity: 1; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  40% { opacity: 1; transform: scale(1); }
+  55% { opacity: 0.4; transform: scale(0.55); }
+  70% { opacity: 1; transform: scale(1); }
 }
 
 .sky .stars circle,
 .sky .betel-glow,
 .sky .rigel-glow {
-  animation: twinkle 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: twinkle 3s ease-in-out infinite;
 }
 
-.sky .stars circle:nth-child(3n) { animation-duration: 7.5s; animation-delay: -2.1s; }
-.sky .stars circle:nth-child(3n + 1) { animation-duration: 5.2s; animation-delay: -3.7s; }
-.sky .stars circle:nth-child(4n) { animation-duration: 8.3s; animation-delay: -5.4s; }
-.sky .stars circle:nth-child(5n + 2) { animation-duration: 9.1s; animation-delay: -1.3s; }
-.sky .stars circle:nth-child(7n + 3) { animation-duration: 6.7s; animation-delay: -6.2s; }
-.sky .betel-glow { animation-duration: 7.9s; animation-delay: -2.8s; }
-.sky .rigel-glow { animation-duration: 6.4s; animation-delay: -4.6s; }
+.sky .stars circle:nth-child(3n) { animation-duration: 3.7s; animation-delay: -1.1s; }
+.sky .stars circle:nth-child(3n + 1) { animation-duration: 2.6s; animation-delay: -1.9s; }
+.sky .stars circle:nth-child(4n) { animation-duration: 4.1s; animation-delay: -2.7s; }
+.sky .stars circle:nth-child(5n + 2) { animation-duration: 4.5s; animation-delay: -0.6s; }
+.sky .stars circle:nth-child(7n + 3) { animation-duration: 3.3s; animation-delay: -3.1s; }
+.sky .betel-glow { animation-duration: 3.9s; animation-delay: -1.4s; }
+.sky .rigel-glow { animation-duration: 3.2s; animation-delay: -2.3s; }
 
 @media (prefers-reduced-motion: reduce) {
   .sky .stars circle,
